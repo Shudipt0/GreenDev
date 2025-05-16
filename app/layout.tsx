@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} `} cz-shortcut-listen="true">
+      <body  cz-shortcut-listen="true">
        <Navbar/>
         {children}
         <Footer/>

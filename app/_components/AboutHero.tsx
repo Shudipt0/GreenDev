@@ -4,7 +4,7 @@ import { AnimatedTestimonialsDemo } from "./AboutHeroCard";
 
 const AboutHero = () => {
   return (
-    <section className="w-full py-10 lg:py-20 ">
+    <section className="w-full py-8 lg:py-16 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center ">
         {/* left side */}
         <div className="w-full lg:w-[540px] col-span-1 space-y-4 lg:space-y-8">
