@@ -3,6 +3,7 @@ import { ClientCompany } from "./_components/ClientCompany";
 import { HeroBannner } from "./_components/HeroBanner";
 import ProjectHero from "./_components/ProjectHero";
 import Services from "./_components/Services";
+import Testmonial from "./_components/Testmonial";
 
 
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Services/>
       <AboutHero/>
       <ProjectHero/>
+      <Testmonial/>
     
     </div>
     
