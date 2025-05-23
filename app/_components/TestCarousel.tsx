@@ -33,8 +33,8 @@ const TestCarousel = () => {
           </div>)}
       className="w-full "
        >
-    <div className="w-full grid grid-cols-2 gap-20 bg-red-300">
-      <div className=" w-full lg:w-[400px] text-start  ">
+    <div className="w-full grid lg:grid-cols-2 gap-20 ">
+      <div className=" w-full lg:w-[400px] h-[350px] text-start p-14 ">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -47,7 +47,7 @@ const TestCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start">
+        <div className="w-full lg:w-[400px] h-[350px] text-start p-14">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -61,8 +61,8 @@ const TestCarousel = () => {
           </div>
         </div>
     </div>
-    <div className="w-full grid grid-cols-2 gap-20 bg-red-300">
-      <div className=" w-full lg:w-[400px] text-start  ">
+    <div className="w-full grid lg:grid-cols-2 gap-20 ">
+      <div className=" w-full lg:w-[400px] h-[350px] text-start p-14 ">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -75,7 +75,7 @@ const TestCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start">
+        <div className="w-full lg:w-[400px] h-[350px] text-start p-14">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product

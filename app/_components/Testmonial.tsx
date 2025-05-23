@@ -3,7 +3,7 @@ import TestCarousel from './TestCarousel'
 
 const Testmonial = () => {
   return (
-    <section className='h-[700px] bg-[#A0A4AB]/10 '>
+    <section className='h-[700px] bg-[#A0A4AB]/10 container mx-auto px-6 lg:px-28 flex flex-col justify-center '>
         <div className="w-full lg:w-[660px] space-y-4 lg:space-y-8" > 
         <h4 className="text-[22px] font-semibold text-blue-500 ">
         Testmonial
