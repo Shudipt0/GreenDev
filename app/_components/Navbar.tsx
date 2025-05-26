@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { CgMenuRightAlt } from "react-icons/cg";
+import { FaTimes } from "react-icons/fa";
+
 
 const logo = {
   title: "GreenDev",
@@ -28,6 +32,7 @@ const menu = [
 ];
 
 const Navbar = () => {
+  const [mobilemenu, setMobileMenu] = useState(false);
   const pathName = usePathname();
 
   return (
@@ -65,7 +70,14 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex gap-2"></div>
+          <div className="flex gap-2">
+            <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">
+              Login
+            </button>
+             <button className="px-4 text-[14px] font-bold text-white bg-gray-500 rounded-md transition-colors hover:bg-gray-600">
+              Signin
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Menu */}
@@ -75,115 +87,48 @@ const Navbar = () => {
             <Link href={logo.url} className="flex items-center gap-2">
               {logo.title}
             </Link>
-            {/* <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="max-h-8" alt={logo.alt} />
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-6 p-4">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="flex w-full flex-col gap-4"
-                  >
-                    {menu.map((item) => renderMobileMenuItem(item))}
-                  </Accordion>
-
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet> */}
+            {/* Mobile Menu Button */}
+            <button onClick={()=> setMobileMenu(!mobilemenu)}  className="" >
+              {mobilemenu ? <FaTimes /> : <CgMenuRightAlt />}
+            </button>
           </div>
         </div>
       </div>
+      {/* Mobile Dropdown Menu */}
+      {mobilemenu && (
+        <div className="lg:hidden bg-white shadow-md fixed top-14 left-0 w-full z-50">
+          <div className="flex flex-col items-center py-4">
+            {menu.map((nav) => (
+              <Link
+                key={nav.title}
+                href={nav.url}
+                className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
+                  pathName === nav.url ? "text-black" : "text-[#0E0E2C]/60"
+                }`}
+                onClick={() => setMobileMenu(false)}
+              >
+                {nav.title}
+              </Link>
+            ))}
+
+            <div className="flex gap-2 mt-4 ">
+            <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
+              Login
+            </button>
+             <button className="px-4 py-1 text-[14px] font-bold text-white bg-gray-500 rounded transition-colors hover:bg-gray-600">
+              Signin
+            </button>
+          </div>
+          </div>
+        </div>
+      )}
+      {/* End Mobile Dropdown Menu */}
+      {/* <div className="fixed w-full h-screen top-14  " ></div> */}
+      
     </section>
   );
 };
 
-// const renderMenuItem = (item: MenuItem) => {
-//   if (item.items) {
-//     return (
-//       <NavigationMenuItem key={item.title}>
-//         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-//         <NavigationMenuContent className="bg-popover text-popover-foreground">
-//           {item.items.map((subItem) => (
-//             <NavigationMenuLink asChild key={subItem.title} className="w-80">
-//               <SubMenuLink item={subItem} />
-//             </NavigationMenuLink>
-//           ))}
-//         </NavigationMenuContent>
-//       </NavigationMenuItem>
-//     );
-//   }
 
-//   return (
-//     <NavigationMenuItem key={item.title}>
-//       <NavigationMenuLink
-//         href={item.url}
-//         className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
-//       >
-//         {item.title}
-//       </NavigationMenuLink>
-//     </NavigationMenuItem>
-//   );
-// };
-
-// const renderMobileMenuItem = (item: MenuItem) => {
-//   if (item.items) {
-//     return (
-//       <AccordionItem key={item.title} value={item.title} className="border-b-0">
-//         <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline">
-//           {item.title}
-//         </AccordionTrigger>
-//         <AccordionContent className="mt-2">
-//           {item.items.map((subItem) => (
-//             <SubMenuLink key={subItem.title} item={subItem} />
-//           ))}
-//         </AccordionContent>
-//       </AccordionItem>
-//     );
-//   }
-
-//   return (
-//     <a key={item.title} href={item.url} className="text-md font-semibold">
-//       {item.title}
-//     </a>
-//   );
-// };
-
-// const SubMenuLink = ({ item }: { item: MenuItem }) => {
-//   return (
-//     <a
-//       className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
-//       href={item.url}
-//     >
-//       <div className="text-foreground">{item.icon}</div>
-//       <div>
-//         <div className="text-sm font-semibold">{item.title}</div>
-//         {item.description && (
-//           <p className="text-sm leading-snug text-muted-foreground">
-//             {item.description}
-//           </p>
-//         )}
-//       </div>
-//     </a>
-//   );
-// };
 
 export { Navbar };
