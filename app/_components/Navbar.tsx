@@ -5,7 +5,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { FaTimes } from "react-icons/fa";
-
+import {
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const logo = {
   title: "GreenDev",
@@ -71,12 +75,19 @@ const Navbar = () => {
           </div>
 
           <div className="flex gap-2">
-            <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">
-              Login
-            </button>
-             <button className="px-4 text-[14px] font-bold text-white bg-gray-500 rounded-md transition-colors hover:bg-gray-600">
-              Signin
-            </button>
+            <SignedOut>
+              <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">
+                
+                <Link href="/sign-in">Log In</Link>
+              </button>
+              <button className="px-4 text-[14px] font-bold text-white bg-gray-500 rounded-md transition-colors hover:bg-gray-600">
+                
+                <Link href="/sign-up">Sign Up</Link>
+              </button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </nav>
 
@@ -88,7 +99,7 @@ const Navbar = () => {
               {logo.title}
             </Link>
             {/* Mobile Menu Button */}
-            <button onClick={()=> setMobileMenu(!mobilemenu)}  className="" >
+            <button onClick={() => setMobileMenu(!mobilemenu)} className="">
               {mobilemenu ? <FaTimes /> : <CgMenuRightAlt />}
             </button>
           </div>
@@ -112,23 +123,27 @@ const Navbar = () => {
             ))}
 
             <div className="flex gap-2 mt-4 ">
-            <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
-              Login
-            </button>
-             <button className="px-4 py-1 text-[14px] font-bold text-white bg-gray-500 rounded transition-colors hover:bg-gray-600">
-              Signin
-            </button>
-          </div>
+              <SignedOut>
+                <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
+                  
+                  <Link href="/sign-in">Log In</Link>
+                </button>
+                <button className="px-4 py-1 text-[14px] font-bold text-white bg-gray-500 rounded transition-colors hover:bg-gray-600">
+                 
+                  <Link href="/sign-up">Sign Up</Link>
+                </button>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
           </div>
         </div>
       )}
       {/* End Mobile Dropdown Menu */}
       {/* <div className="fixed w-full h-screen top-14  " ></div> */}
-      
     </section>
   );
 };
-
-
 
 export { Navbar };
