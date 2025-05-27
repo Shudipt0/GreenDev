@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function SignUpPage() {
   return (
-    <section className="pt-20 w-full h-screen flex items-center justify-center">
+    <section className=" w-full h-screen flex items-center justify-center">
     <SignUp.Root>
       <SignUp.Step name="start" className="container">
         

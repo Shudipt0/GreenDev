@@ -19,130 +19,49 @@ import {
 const data = {
   navMain: [
     {
-      title: "Pages",
+      title: "Start",
       url: "#",
       items: [
         {
-          title: "Installation",
+          title: "About Company",
           url: "#",
         },
         {
-          title: "Project Structure",
+          title: "Users",
           url: "#",
         },
       ],
     },
     {
-      title: "Building Your Application",
+      title: "Sections",
       url: "#",
       items: [
         {
-          title: "Routing",
+          title: "Services",
           url: "#",
         },
         {
-          title: "Data Fetching",
+          title: "Developers and Disgners",
           url: "#",
           isActive: true,
         },
         {
-          title: "Rendering",
+          title: "All Projects",
           url: "#",
         },
         {
-          title: "Caching",
+          title: "Expert's thoughts",
           url: "#",
         },
         {
-          title: "Styling",
+          title: "Customers Contact inforation",
           url: "#",
         },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
+      
       ],
     },
-    {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
-    },
+   
+   
   ],
 }
 

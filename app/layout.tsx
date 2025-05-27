@@ -17,7 +17,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body cz-shortcut-listen="true">
-          {pathName.includes("/admin") ? (
+          {pathName.includes("/admin") || pathName === '/sign-in' || pathName === '/sign-up' ? (
             <> {children}</>
           ) : (
             <>

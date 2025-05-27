@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function SignInPage() {
   return (
-    <section className="pt-20 w-full h-screen flex items-center justify-center">
+    <section className=" w-full h-screen flex items-center justify-center">
       {/* <SignIn.Root>
           <SignIn.Step name="start">
         <h1>Sign in to your account</h1>
