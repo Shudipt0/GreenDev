@@ -40,7 +40,7 @@ import {
 
 // Define the Services type according to your data structure
 type Services = {
-  id: string,
+  id: number,
   serviceName: string,
   description: string,
   image: string,
@@ -81,7 +81,7 @@ export const columns: ColumnDef<Services>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original
+      const service = row.original
 
       return (
         <DropdownMenu>

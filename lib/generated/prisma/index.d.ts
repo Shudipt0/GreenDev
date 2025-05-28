@@ -966,19 +966,29 @@ export namespace Prisma {
 
   export type AggregateService = {
     _count: ServiceCountAggregateOutputType | null
+    _avg: ServiceAvgAggregateOutputType | null
+    _sum: ServiceSumAggregateOutputType | null
     _min: ServiceMinAggregateOutputType | null
     _max: ServiceMaxAggregateOutputType | null
   }
 
+  export type ServiceAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type ServiceSumAggregateOutputType = {
+    id: number | null
+  }
+
   export type ServiceMinAggregateOutputType = {
-    id: string | null
+    id: number | null
     serviceName: string | null
     description: string | null
     image: string | null
   }
 
   export type ServiceMaxAggregateOutputType = {
-    id: string | null
+    id: number | null
     serviceName: string | null
     description: string | null
     image: string | null
@@ -992,6 +1002,14 @@ export namespace Prisma {
     _all: number
   }
 
+
+  export type ServiceAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type ServiceSumAggregateInputType = {
+    id?: true
+  }
 
   export type ServiceMinAggregateInputType = {
     id?: true
@@ -1053,6 +1071,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: ServiceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ServiceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: ServiceMinAggregateInputType
@@ -1083,16 +1113,20 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ServiceCountAggregateInputType | true
+    _avg?: ServiceAvgAggregateInputType
+    _sum?: ServiceSumAggregateInputType
     _min?: ServiceMinAggregateInputType
     _max?: ServiceMaxAggregateInputType
   }
 
   export type ServiceGroupByOutputType = {
-    id: string
+    id: number
     serviceName: string
     description: string
     image: string
     _count: ServiceCountAggregateOutputType | null
+    _avg: ServiceAvgAggregateOutputType | null
+    _sum: ServiceSumAggregateOutputType | null
     _min: ServiceMinAggregateOutputType | null
     _max: ServiceMaxAggregateOutputType | null
   }
@@ -1145,7 +1179,7 @@ export namespace Prisma {
     name: "Service"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: string
+      id: number
       serviceName: string
       description: string
       image: string
@@ -1572,7 +1606,7 @@ export namespace Prisma {
    * Fields of the Service model
    */
   interface ServiceFieldRefs {
-    readonly id: FieldRef<"Service", 'String'>
+    readonly id: FieldRef<"Service", 'Int'>
     readonly serviceName: FieldRef<"Service", 'String'>
     readonly description: FieldRef<"Service", 'String'>
     readonly image: FieldRef<"Service", 'String'>
@@ -1948,12 +1982,22 @@ export namespace Prisma {
 
   export type AggregateTeam = {
     _count: TeamCountAggregateOutputType | null
+    _avg: TeamAvgAggregateOutputType | null
+    _sum: TeamSumAggregateOutputType | null
     _min: TeamMinAggregateOutputType | null
     _max: TeamMaxAggregateOutputType | null
   }
 
+  export type TeamAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type TeamSumAggregateOutputType = {
+    id: number | null
+  }
+
   export type TeamMinAggregateOutputType = {
-    id: string | null
+    id: number | null
     name: string | null
     profession: string | null
     bio_data: string | null
@@ -1961,7 +2005,7 @@ export namespace Prisma {
   }
 
   export type TeamMaxAggregateOutputType = {
-    id: string | null
+    id: number | null
     name: string | null
     profession: string | null
     bio_data: string | null
@@ -1977,6 +2021,14 @@ export namespace Prisma {
     _all: number
   }
 
+
+  export type TeamAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type TeamSumAggregateInputType = {
+    id?: true
+  }
 
   export type TeamMinAggregateInputType = {
     id?: true
@@ -2041,6 +2093,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: TeamAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TeamSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: TeamMinAggregateInputType
@@ -2071,17 +2135,21 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: TeamCountAggregateInputType | true
+    _avg?: TeamAvgAggregateInputType
+    _sum?: TeamSumAggregateInputType
     _min?: TeamMinAggregateInputType
     _max?: TeamMaxAggregateInputType
   }
 
   export type TeamGroupByOutputType = {
-    id: string
+    id: number
     name: string
     profession: string
     bio_data: string
     image: string
     _count: TeamCountAggregateOutputType | null
+    _avg: TeamAvgAggregateOutputType | null
+    _sum: TeamSumAggregateOutputType | null
     _min: TeamMinAggregateOutputType | null
     _max: TeamMaxAggregateOutputType | null
   }
@@ -2138,7 +2206,7 @@ export namespace Prisma {
     name: "Team"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: string
+      id: number
       name: string
       profession: string
       bio_data: string
@@ -2566,7 +2634,7 @@ export namespace Prisma {
    * Fields of the Team model
    */
   interface TeamFieldRefs {
-    readonly id: FieldRef<"Team", 'String'>
+    readonly id: FieldRef<"Team", 'Int'>
     readonly name: FieldRef<"Team", 'String'>
     readonly profession: FieldRef<"Team", 'String'>
     readonly bio_data: FieldRef<"Team", 'String'>
@@ -2994,6 +3062,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
@@ -3008,16 +3090,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
+   * Reference to a field of type 'Float'
    */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
 
 
   /**
-   * Reference to a field of type 'Int[]'
+   * Reference to a field of type 'Float[]'
    */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -3028,7 +3110,7 @@ export namespace Prisma {
     AND?: ServiceWhereInput | ServiceWhereInput[]
     OR?: ServiceWhereInput[]
     NOT?: ServiceWhereInput | ServiceWhereInput[]
-    id?: StringFilter<"Service"> | string
+    id?: IntFilter<"Service"> | number
     serviceName?: StringFilter<"Service"> | string
     description?: StringFilter<"Service"> | string
     image?: StringFilter<"Service"> | string
@@ -3042,7 +3124,7 @@ export namespace Prisma {
   }
 
   export type ServiceWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
+    id?: number
     AND?: ServiceWhereInput | ServiceWhereInput[]
     OR?: ServiceWhereInput[]
     NOT?: ServiceWhereInput | ServiceWhereInput[]
@@ -3057,15 +3139,17 @@ export namespace Prisma {
     description?: SortOrder
     image?: SortOrder
     _count?: ServiceCountOrderByAggregateInput
+    _avg?: ServiceAvgOrderByAggregateInput
     _max?: ServiceMaxOrderByAggregateInput
     _min?: ServiceMinOrderByAggregateInput
+    _sum?: ServiceSumOrderByAggregateInput
   }
 
   export type ServiceScalarWhereWithAggregatesInput = {
     AND?: ServiceScalarWhereWithAggregatesInput | ServiceScalarWhereWithAggregatesInput[]
     OR?: ServiceScalarWhereWithAggregatesInput[]
     NOT?: ServiceScalarWhereWithAggregatesInput | ServiceScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Service"> | string
+    id?: IntWithAggregatesFilter<"Service"> | number
     serviceName?: StringWithAggregatesFilter<"Service"> | string
     description?: StringWithAggregatesFilter<"Service"> | string
     image?: StringWithAggregatesFilter<"Service"> | string
@@ -3075,7 +3159,7 @@ export namespace Prisma {
     AND?: TeamWhereInput | TeamWhereInput[]
     OR?: TeamWhereInput[]
     NOT?: TeamWhereInput | TeamWhereInput[]
-    id?: StringFilter<"Team"> | string
+    id?: IntFilter<"Team"> | number
     name?: StringFilter<"Team"> | string
     profession?: StringFilter<"Team"> | string
     bio_data?: StringFilter<"Team"> | string
@@ -3091,7 +3175,7 @@ export namespace Prisma {
   }
 
   export type TeamWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
+    id?: number
     AND?: TeamWhereInput | TeamWhereInput[]
     OR?: TeamWhereInput[]
     NOT?: TeamWhereInput | TeamWhereInput[]
@@ -3108,15 +3192,17 @@ export namespace Prisma {
     bio_data?: SortOrder
     image?: SortOrder
     _count?: TeamCountOrderByAggregateInput
+    _avg?: TeamAvgOrderByAggregateInput
     _max?: TeamMaxOrderByAggregateInput
     _min?: TeamMinOrderByAggregateInput
+    _sum?: TeamSumOrderByAggregateInput
   }
 
   export type TeamScalarWhereWithAggregatesInput = {
     AND?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
     OR?: TeamScalarWhereWithAggregatesInput[]
     NOT?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Team"> | string
+    id?: IntWithAggregatesFilter<"Team"> | number
     name?: StringWithAggregatesFilter<"Team"> | string
     profession?: StringWithAggregatesFilter<"Team"> | string
     bio_data?: StringWithAggregatesFilter<"Team"> | string
@@ -3124,56 +3210,52 @@ export namespace Prisma {
   }
 
   export type ServiceCreateInput = {
-    id?: string
     serviceName: string
     description: string
     image: string
   }
 
   export type ServiceUncheckedCreateInput = {
-    id?: string
+    id?: number
     serviceName: string
     description: string
     image: string
   }
 
   export type ServiceUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
 
   export type ServiceUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
+    id?: IntFieldUpdateOperationsInput | number
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
 
   export type ServiceCreateManyInput = {
-    id?: string
+    id?: number
     serviceName: string
     description: string
     image: string
   }
 
   export type ServiceUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
 
   export type ServiceUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
+    id?: IntFieldUpdateOperationsInput | number
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
 
   export type TeamCreateInput = {
-    id?: string
     name: string
     profession: string
     bio_data: string
@@ -3181,7 +3263,7 @@ export namespace Prisma {
   }
 
   export type TeamUncheckedCreateInput = {
-    id?: string
+    id?: number
     name: string
     profession: string
     bio_data: string
@@ -3189,7 +3271,6 @@ export namespace Prisma {
   }
 
   export type TeamUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
@@ -3197,7 +3278,7 @@ export namespace Prisma {
   }
 
   export type TeamUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
+    id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
@@ -3205,7 +3286,7 @@ export namespace Prisma {
   }
 
   export type TeamCreateManyInput = {
-    id?: string
+    id?: number
     name: string
     profession: string
     bio_data: string
@@ -3213,7 +3294,6 @@ export namespace Prisma {
   }
 
   export type TeamUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
@@ -3221,11 +3301,22 @@ export namespace Prisma {
   }
 
   export type TeamUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
+    id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -3250,6 +3341,10 @@ export namespace Prisma {
     image?: SortOrder
   }
 
+  export type ServiceAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
   export type ServiceMaxOrderByAggregateInput = {
     id?: SortOrder
     serviceName?: SortOrder
@@ -3262,6 +3357,26 @@ export namespace Prisma {
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+  }
+
+  export type ServiceSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3290,6 +3405,10 @@ export namespace Prisma {
     image?: SortOrder
   }
 
+  export type TeamAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
   export type TeamMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -3306,8 +3425,31 @@ export namespace Prisma {
     image?: SortOrder
   }
 
+  export type TeamSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -3322,6 +3464,33 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3339,17 +3508,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
 
