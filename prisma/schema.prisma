@@ -14,4 +14,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Service {
+  id             String @id @default(cuid())
+  serviceName    String
+  description    String
+  image          String
+}
 
+model Team {
+  id             String @id @default(cuid())
+  name           String
+  profession     String
+  bio_data       String
+  image          String
+}
