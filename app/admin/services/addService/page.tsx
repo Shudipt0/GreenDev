@@ -1,10 +1,14 @@
+'use client'
+
 import { addService } from '@/app/actions/service/service'
-import React from 'react'
+import React, { useActionState } from 'react'
+
 
 const page = () => {
+  const [state , action, isPending] = useActionState(addService , null)
   return (
     <div>
-       <form action={addService}>
+       <form action={action}>
               <label htmlFor="serviceName">Service Name</label>
               <input type="text" name='serviceName' id='serviceName'   />
               <br />

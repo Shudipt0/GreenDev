@@ -4,7 +4,7 @@ import React from 'react'
 
 const page = async () => {
   const services = await prisma.service.findMany();
-  console.log(services)
+  // console.log(services)
   return (
     <div>
       <DataTable services={services} />

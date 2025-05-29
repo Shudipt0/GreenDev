@@ -35,6 +35,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { prisma } from "@/lib/utils"
+import { deleteService } from "../actions/service/service"
 
 
 
@@ -55,7 +57,7 @@ export const columns: ColumnDef<Services>[] = [
  {
     accessorKey: "id",
     header: "ID",
-    cell: ({ row }) => <div className="capitalize  ">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="capitalize ">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "serviceName",
@@ -82,6 +84,11 @@ export const columns: ColumnDef<Services>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const service = row.original
+// delete item
+      const handleDelete = async () =>{
+        const id = row.getValue("id")
+        const deleteItem = await deleteService(id)
+      }
 
       return (
         <DropdownMenu>
@@ -98,7 +105,7 @@ export const columns: ColumnDef<Services>[] = [
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={()=> (window.location.href = `/admin/services/${row.getValue('id')}/edit`)}>Edit</DropdownMenuItem>
-            <DropdownMenuItem>Delete</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleDelete} >Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )
@@ -142,14 +149,7 @@ export function DataTable(props: Props) {
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
-        <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+        
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
