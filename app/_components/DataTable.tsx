@@ -16,7 +16,7 @@ import {
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -26,7 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+
 import {
   Table,
   TableBody,
@@ -35,8 +35,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { prisma } from "@/lib/utils"
-import { deleteService } from "../actions/service/service"
+
+
 
 
 
@@ -50,74 +50,17 @@ type Services = {
 };
 
 type Props = {
-  services: Services[];
+  data: any[];
+  columns: ColumnDef<any>[]
 }
 
-export const columns: ColumnDef<Services>[] = [
- {
-    accessorKey: "id",
-    header: "ID",
-    cell: ({ row }) => <div className="capitalize ">{row.getValue("id")}</div>,
-  },
-  {
-    accessorKey: "serviceName",
-    header: "Service Name",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("serviceName")}</div>
-    ),
-  },
-  {
-    accessorKey: "description",
-  header: "Description",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("description")}</div>,
-  },
-   {
-    accessorKey: "image",
-    header: "Image",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("image")}</div>
-    ),
-  },
-  
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      const service = row.original
-// delete item
-      const handleDelete = async () =>{
-        const id = row.getValue("id")
-        const deleteItem = await deleteService(id)
-      }
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem onClick={()=> (window.location.href = `/admin/services/${row.getValue('id')}/view`)} >
-              View Details
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={()=> (window.location.href = `/admin/services/${row.getValue('id')}/edit`)}>Edit</DropdownMenuItem>
-            <DropdownMenuItem onClick={handleDelete} >Delete</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )
-    },
-  },
-]
 
 
 
 export function DataTable(props: Props) {
   // getting data
-  const {services} = props;
+  const {data , columns} = props;
 
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -128,7 +71,7 @@ export function DataTable(props: Props) {
   const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
-    data: services,
+    data: data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,

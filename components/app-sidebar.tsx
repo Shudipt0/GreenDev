@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react"
 
 import { SearchForm } from "@/components/search-form"
@@ -14,6 +15,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { usePathname } from "next/navigation"
 
 // This is sample data.
 const data = {
@@ -33,32 +35,36 @@ const data = {
       ],
     },
     {
-      title: "Sections",
+      title: "Service",
       url: "#",
       items: [
         {
-          title: "Services",
-          url: "#",
+          title: "Add Service",
+          url: "/admin/services/addService",
         },
         {
-          title: "Developers and Disgners",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "All Projects",
-          url: "#",
-        },
-        {
-          title: "Expert's thoughts",
-          url: "#",
-        },
-        {
-          title: "Customers Contact inforation",
-          url: "#",
-        },
+          title: "View Services " ,
+          url: "/admin/services",
+        }
       
-      ],
+     ],
+    },
+
+        {
+      title: "Blogs",
+      url: "#",
+      items: [
+        {
+          title: "Add Blog",
+          url: "#",
+        },
+        {
+          title: "View Blogs " ,
+          url: "#",
+         
+        }
+      
+     ],
     },
    
    
@@ -66,6 +72,7 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+    const pathName = usePathname();
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -84,7 +91,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
+                    <SidebarMenuButton asChild className={`${pathName === item.url? 'bg-blue-200 hover:bg-blue-200': ''}`} >
                       <a href={item.url}>{item.title}</a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

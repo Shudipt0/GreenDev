@@ -1,5 +1,6 @@
 "use server";
 import { prisma } from "@/lib/utils";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const upDateService = async (data: FormData) => {
@@ -18,6 +19,7 @@ export const upDateService = async (data: FormData) => {
   });
 
   // console.log('successfully updated', updateService);
+  revalidatePath("/admin/services")
   redirect("/admin/services");
 };
 
@@ -40,6 +42,7 @@ export const addService = async (prevState: any, data: FormData) => {
   });
 
   // console.log("successfully added",addNew);
+  revalidatePath("/admin/services")
   redirect("/admin/services");
 };
 
@@ -49,4 +52,6 @@ export const deleteService = async (data: any) => {
     where: { id: Number(data) },
   });
   // console.log("successfully deleted",deleteItem);
+  revalidatePath("/admin/services")
+
 };
