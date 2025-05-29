@@ -6,6 +6,7 @@ import { Footer } from "./_components/Footer";
 import Testmonial from "./_components/Testmonial";
 import { usePathname } from "next/navigation";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ContextImageProvider } from "@/context/ImageContext";
 
 export default function RootLayout({
   children,
@@ -15,6 +16,7 @@ export default function RootLayout({
   const pathName = usePathname();
   return (
     <ClerkProvider>
+      <ContextImageProvider>
       <html lang="en">
         <body cz-shortcut-listen="true">
           {pathName.includes("/admin") || pathName === '/sign-in' || pathName === '/sign-up' ? (
@@ -29,6 +31,7 @@ export default function RootLayout({
           )}
         </body>
       </html>
+      </ContextImageProvider>
     </ClerkProvider>
   );
 }

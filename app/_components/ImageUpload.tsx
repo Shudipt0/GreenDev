@@ -3,9 +3,11 @@ import { UploadButton , UploadDropzone } from "@/utils/uploadthing";
 import Image from "next/image";
 import { useState } from "react";
 import {imageRemove} from "../actions/imageRemove"
+import { useImageContext } from "@/context/ImageContext";
 
 const ImageUpload = () => {
-  const [imageUrl, setImageUrl] = useState("")
+  const {imageUrl,setImageUrl} = useImageContext();
+  // const [imageUrl, setImageUrl] = useState("")
   const [imageKey, setImageKey] = useState("");
 
   const handleRemoveImage = async () => {
