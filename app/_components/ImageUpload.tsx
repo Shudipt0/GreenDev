@@ -1,27 +1,26 @@
 "use client";
-import { UploadButton , UploadDropzone } from "@/utils/uploadthing";
+import { UploadDropzone } from "@/utils/uploadthing";
 import Image from "next/image";
 import { useState } from "react";
-import {imageRemove} from "../actions/imageRemove"
+import { imageRemove } from "../actions/imageRemove";
 import { useImageContext } from "@/context/ImageContext";
 
 const ImageUpload = () => {
-  const {imageUrl,setImageUrl} = useImageContext();
+  const { imageUrl, setImageUrl } = useImageContext();
   // const [imageUrl, setImageUrl] = useState("")
   const [imageKey, setImageKey] = useState("");
 
   const handleRemoveImage = async () => {
-   const res = await imageRemove(imageKey);
-   if(res.success){
-    alert("One file is removed from server");
-    setImageUrl("");
-    setImageKey("");
-   }
-    console.log('removing image')
-  }
+    const res = await imageRemove(imageKey);
+    if (res.success) {
+      alert("One file is removed from server");
+      setImageUrl("");
+      setImageKey("");
+    }
+    console.log("removing image");
+  };
   return (
     <div>
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <UploadDropzone
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
@@ -37,23 +36,28 @@ const ImageUpload = () => {
         }}
       />
 
-
-      <div>
-        <h1>Image preview</h1>
-        {
-          imageUrl &&(
-            <div>
-              <Image src={imageUrl} alt="image" width={300} height={200} className="object-cover h-auto w-full " />
-            </div>
-          )
-        }
-        <button onClick={handleRemoveImage} className="text-white thext-sm font-bold px-2 rounded bg-red-500 " >
-          Remove Image
-        </button>
+      <div className="py-8 space-y-5">
+        <h1 className="text-sm font-semibold">Image preview</h1>
+        {imageUrl && (
+          <div className="space-y-4 w-[150px] ">
+            <Image
+              src={imageUrl}
+              alt="image"
+              width={100}
+              height={80}
+              className="object-cover h-auto w-full "
+            />
+            <button
+              onClick={handleRemoveImage}
+              className="text-white thext-sm font-bold px-4 py-1 rounded bg-red-500 "
+            >
+              Remove Image
+            </button>
+          </div>
+        )}
       </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ImageUpload
+export default ImageUpload;
