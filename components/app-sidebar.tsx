@@ -51,16 +51,16 @@ const data = {
     },
 
         {
-      title: "Blogs",
+      title: "Our Team",
       url: "#",
       items: [
         {
-          title: "Add Blog",
-          url: "#",
+          title: "Add Team Member",
+          url: "/admin/team/addTeamMember",
         },
         {
-          title: "View Blogs " ,
-          url: "#",
+          title: "View Team " ,
+          url: "/admin/team",
          
         }
       
