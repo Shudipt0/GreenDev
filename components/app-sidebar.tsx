@@ -38,15 +38,14 @@ const data = {
       title: "Service",
       url: "#",
       items: [
+         {
+          title: "View Services " ,
+          url: "/admin/services",
+        },
         {
           title: "Add Service",
           url: "/admin/services/addService",
-        },
-        {
-          title: "View Services " ,
-          url: "/admin/services",
-        }
-      
+        },      
      ],
     },
 
@@ -55,15 +54,30 @@ const data = {
       url: "#",
       items: [
         {
-          title: "Add Team Member",
-          url: "/admin/team/addTeamMember",
-        },
-        {
           title: "View Team " ,
           url: "/admin/team",
          
-        }
-      
+        },
+        {
+          title: "Add Team Member",
+          url: "/admin/team/addTeamMember",
+        },      
+     ],
+    },
+
+    {
+      title: "All Projects",
+      url: "#",
+      items: [
+        {
+          title: "View Projects " ,
+          url: "/admin/team",
+         
+        },
+        {
+          title: "Add Projects",
+          url: "/admin/team/addTeamMember",
+        },      
      ],
     },
    
