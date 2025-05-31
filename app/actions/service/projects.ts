@@ -26,11 +26,12 @@ export const upDateProject = async (data: FormData) => {
 
 // add service
 export const addProject = async (prevState: any, data: FormData) => {
-  const serviceName = data.get("serviceName");
+  const category = data.get("category");
+  const title = data.get("title");
   const description = data.get("description");
   const image = data.get("image");
 
-  if (!serviceName || !description || !image) {
+  if (!category || !title || !description || !image) {
     throw new Error("Missing fields");
   }
 

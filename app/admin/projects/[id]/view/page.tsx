@@ -6,7 +6,7 @@ type Props = {
     params: Promise<{id: string}>
 }
 
-const teamViewPage = async (props: Props) => {
+const ProjectViewPage = async (props: Props) => {
     const {id} = await props.params;
 
     const projects = await prisma.project.findUnique({
@@ -27,4 +27,4 @@ const teamViewPage = async (props: Props) => {
   )
 }
 
-export default teamViewPage
+export default ProjectViewPage
