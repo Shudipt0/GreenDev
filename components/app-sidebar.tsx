@@ -71,12 +71,28 @@ const data = {
       items: [
         {
           title: "View Projects " ,
-          url: "/admin/team",
+          url: "/admin/projects",
          
         },
         {
           title: "Add Projects",
-          url: "/admin/team/addTeamMember",
+          url: "/admin/projects/addProject",
+        },      
+     ],
+    },
+    
+    {
+      title: "Experts Thought",
+      url: "#",
+      items: [
+        {
+          title: "View All Thought " ,
+          url: "/admin/thought",
+         
+        },
+        {
+          title: "Add Thoughts",
+          url: "/admin/thought/addThought",
         },      
      ],
     },
