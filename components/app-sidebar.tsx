@@ -30,7 +30,7 @@ const data = {
         },
         {
           title: "Users",
-          url: "#",
+          url: "/admin/users",
         },
       ],
     },
