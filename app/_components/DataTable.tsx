@@ -41,13 +41,13 @@ import {
 
 
 // Define the Services type according to your data structure
-type Services = {
-  id: number,
-  serviceName: string,
-  description: string,
-  image: string,
-  // Add other fields as needed
-};
+// type Services = {
+//   id: number,
+//   serviceName: string,
+//   description: string,
+//   image: string,
+//   // Add other fields as needed
+// };
 
 type Props = {
   data: any[];

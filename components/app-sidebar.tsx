@@ -96,8 +96,18 @@ const data = {
         },      
      ],
     },
-   
-   
+
+    {
+      title: "Users Contact Info.",
+      url: "#",
+      items: [
+        {
+           title: "View Users Contact",
+           url: "/admin/userContact",
+        }
+      ],
+    },
+    
   ],
 }
 

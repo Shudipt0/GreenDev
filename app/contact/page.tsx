@@ -7,8 +7,12 @@ import Image from "next/image";
 import snake from "@/app/images/snake.svg";
 import ContactpageAccour from "../_components/ContactpageAccour";
 import ServicePageCarousel from "../_components/ServicePageCarousel";
+import { useActionState } from "react";
+import { createContact } from "../actions/contact/createContact";
 
-const page = () => {
+const ContactPage = () => {
+  const [state, action, isPending] = useActionState(createContact,null);
+  console.log(state?.errors)
   return (
     <div className="w-full relative">
       <div className="w-full container mx-auto px-6 lg:px-28 mt-32 flex flex-col items-center ">
@@ -20,7 +24,7 @@ const page = () => {
           <h1 className="text-[40px] font-bold ">An expert at your services</h1>
           <div className="w-[540px] z-10 ">
             <form
-              // action={}
+              action={action}
               className="mx-auto flex w-full flex-col gap-10 "
             >
               <div className="w-full flex gap-8">
@@ -35,6 +39,7 @@ const page = () => {
                     placeholder="Your Name"
                     className=""
                   />
+                   {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.name}</p>)}
                 </div>
               </div>
               <div className="grid w-full text-start items-center gap-1.5 bg-white">
@@ -45,6 +50,7 @@ const page = () => {
                   name="email"
                   placeholder="Your Email"
                 />
+                 {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.email}</p>)}
               </div>
               <div className="grid w-full text-start items-center gap-1.5 bg-white">
                 <Label htmlFor="phone">Your Phone Number</Label>
@@ -53,7 +59,7 @@ const page = () => {
                   id="phone"
                   name="phone"
                   placeholder="Your Phone Number"
-                />
+                /> {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.phone}</p>)}
               </div>
               <div className="grid w-full text-start gap-1.5 bg-white">
                 <Label htmlFor="message">Messages</Label>
@@ -63,6 +69,7 @@ const page = () => {
                   id="message"
                   name="message"
                 />
+                 {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.message}</p>)}
               </div>
               <Button
                 type="submit"
@@ -87,4 +94,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;

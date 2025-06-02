@@ -19,6 +19,7 @@ export const AnimatedTestimonials = ({
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -42,6 +43,10 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
+
+  useEffect(()=> {
+   setRotateY(randomRotateY())
+  },[]);
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative flex flex-col gap-4 lg:gap-12">
@@ -55,13 +60,13 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: randomRotateY(),
+                    rotate: rotateY,
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : rotateY,
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
@@ -71,7 +76,7 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: 100,
-                    rotate: randomRotateY(),
+                    rotate: rotateY,
                   }}
                   transition={{
                     duration: 0.4,
