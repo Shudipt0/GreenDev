@@ -1,5 +1,5 @@
 
-import { upDateProject } from '@/app/actions/service/projects'
+import ProjectUpdateFormPage from '@/app/admin/_components/ProjectUpdateForm'
 import { prisma } from '@/lib/utils'
 
 import React from 'react'
@@ -16,18 +16,15 @@ export const ProjectEditPage = async (props: Props) => {
     });
   return (
     <div>
-     <form action={upDateProject}>
-        <input type="hidden" name='id' id='id' defaultValue={projects?.id} readOnly={true} className='hidden' />
-        <input type="text" name='category' id='category' defaultValue={projects?.category}  />
-        <br />
-        <input type="text" name='title' id='title' defaultValue={projects?.title} />
-        <br />
-        <input type="text" name='description' id='description' defaultValue={projects?.description} />
-        <br />
-         <input type="text" name='image' id='image' defaultValue={projects?.image} />
-        <br />
-        <button type='submit' >Update</button>
-      </form>
+     {projects && (
+        <ProjectUpdateFormPage
+          id={projects.id.toString()}
+          category={projects.category}
+          title={projects.title}
+          description={projects.description}
+          image={projects.image}
+        />
+      )}
     </div>
   )
 }

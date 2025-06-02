@@ -1,8 +1,7 @@
 
-import { upDateTeamMember } from '@/app/actions/service/team'
+import TeamUpdateFormPage from '@/app/admin/_components/TeamUpdateForm'
 import { prisma } from '@/lib/utils'
 
-import React from 'react'
 
 
 type Props = {
@@ -16,18 +15,15 @@ export const TeamEditPage = async (props: Props) => {
     });
   return (
     <div>
-     <form action={upDateTeamMember}>
-        <input type="hidden" name='id' id='id' defaultValue={teamMember?.id} readOnly={true} className='hidden' />
-        <input type="text" name='name' id='name' defaultValue={teamMember?.name}  />
-        <br />
-        <input type="text" name='profession' id='profession' defaultValue={teamMember?.profession} />
-        <br />
-        <input type="text" name='bio_data' id='bio_data' defaultValue={teamMember?.bio_data} />
-        <br />
-         <input type="text" name='image' id='image' defaultValue={teamMember?.image} />
-        <br />
-        <button type='submit' >Update</button>
-      </form>
+    {teamMember && (
+        <TeamUpdateFormPage
+          id={teamMember.id.toString()}
+          name={teamMember.name}
+          profession={teamMember.profession}
+          bio_data={teamMember.bio_data}
+          image={teamMember.image}
+        />
+      )}
     </div>
   )
 }

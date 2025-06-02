@@ -1,6 +1,5 @@
 
-
-import { upDateThought } from '@/app/actions/service/thought'
+import ThoughtUpdateFormPage from '@/app/admin/_components/ThoughtUpdateForm'
 import { prisma } from '@/lib/utils'
 
 import React from 'react'
@@ -17,18 +16,15 @@ export const ThoughtEditPage = async (props: Props) => {
     });
   return (
     <div>
-     <form action={upDateThought}>
-        <input type="hidden" name='id' id='id' defaultValue={thoughts?.id} readOnly={true} className='hidden' />
-        <input type="text" name='experts_name' id='experts_name' defaultValue={thoughts?.experts_name}  />
-        <br />
-        <input type="text" name='bio_data' id='bio_data' defaultValue={thoughts?.bio_data} />
-        <br />
-        <input type="text" name='thought' id='thought' defaultValue={thoughts?.thought} />
-        <br />
-         <input type="text" name='image' id='image' defaultValue={thoughts?.image} />
-        <br />
-        <button type='submit' >Update</button>
-      </form>
+     {thoughts && (
+        <ThoughtUpdateFormPage
+          id={thoughts.id.toString()}
+          experts_name={thoughts.experts_name}
+          bio_data={thoughts.bio_data}
+          thought={thoughts.thought}
+          image={thoughts.image}
+        />
+      )}
     </div>
   )
 }

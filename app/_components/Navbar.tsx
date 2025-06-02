@@ -141,7 +141,7 @@ const Navbar = () => {
         </div>
       )}
       {/* End Mobile Dropdown Menu */}
-      {/* <div className="fixed w-full h-screen top-14  " ></div> */}
+      {/* <div className="fixed w-full h-screen top-14 inset-0 bg-gray-500/75 transition-opacity "  aria-hidden="true"></div> */}
     </section>
   );
 };
