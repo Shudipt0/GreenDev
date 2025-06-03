@@ -1,17 +1,22 @@
-import { DataTable } from '@/app/_components/DataTable';
+import { DataTable } from "@/app/_components/DataTable";
 
-import { prisma } from '@/lib/utils'
-import React from 'react'
-import { columns } from '../../../lib/data/ProjectColumn';
+import { prisma } from "@/lib/utils";
+import React from "react";
+import { columns } from "../../../lib/data/ProjectColumn";
 
 const ProjectPage = async () => {
-    const projects = await prisma.project.findMany();
-    // console.log(team)
+  const projects = await prisma.project.findMany();
+  // console.log(team)
   return (
-    <div>
-      <DataTable data={projects}  columns={columns} />
+    <div className="w-full text-center">
+      <h1 className="text-[22px] font-semibold text-black/80 mt-10 ">
+        Projects Table
+      </h1>
+      <div className="p-5">
+        <DataTable data={projects} columns={columns} />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectPage
+export default ProjectPage;

@@ -6,8 +6,11 @@ const page = async () => {
   const services = await prisma.service.findMany();
   // console.log(services)
   return (
-    <div>
-      <DataTable data={services} columns={columns} />
+    <div className='w-full text-center' > 
+        <h1 className='text-[22px] font-semibold text-black/80 mt-10 '>Service Table</h1>
+      <div className='p-5' >
+        <DataTable data={services} columns={columns} />
+      </div>      
     </div>
   )
 }

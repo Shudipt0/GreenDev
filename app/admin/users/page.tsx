@@ -5,17 +5,29 @@ import React from 'react'
 const UserPage = async () => {
     const client = await clerkClient();
     const users = await client.users.getUserList()
-    console.log(users)
+    // console.log(users)
   return (
-    <div>
-      <table className='w-full table-auto' >
+    <div className='w-full flex items-center justify-center ' >
+      <table className='w-[90%] my-10 table-auto border-collapse border border-gray-400 shadow-lg ' >
+        <caption className="caption-top my-5 text-[22px] font-semibold">
+   User List
+  </caption>
+        <thead>
+          <tr className='bg-slate-200'>
+            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold '>Image</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>Name</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>E-mail</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>Role</td>
+          </tr>
+        </thead>
         <tbody>
             {users?.data?.map((user)=> (
-                <tr key={user.id} >
-                    <td><Image src={user.imageUrl} alt='profileImage' width={50} height={50} className='w-12 rounded-full ' /></td>
-                    <td>{user.fullName}</td>
-                    <td>{user.primaryEmailAddress ? user.primaryEmailAddress.emailAddress : ''}</td>
-                    <td>{JSON.stringify(user.publicMetadata.role) || 'Default'}</td>
+                <tr key={user.id} className='' >
+                    <td className='hidden'>{user.id}</td>
+                    <td className='border border-gray-300 pl-8 py-3'><Image src={user.imageUrl} alt='profileImage' width={50} height={50} className='w-12 rounded-full ' /></td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{user.fullName ? user.fullName : '---'}</td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{user.primaryEmailAddress ? user.primaryEmailAddress.emailAddress : ''}</td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{JSON.stringify(user.publicMetadata.role) || 'Default'}</td>
                 </tr>
             ))}
         </tbody>
