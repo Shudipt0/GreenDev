@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   const pathName = usePathname();
   return (
-    <ClerkProvider>
+    <ClerkProvider signInUrl="/sign-in" signUpUrl="/sign-up" >
       <ContextImageProvider>
       <html lang="en">
         <body cz-shortcut-listen="true">

@@ -1,46 +1,42 @@
-'use client'
+"use client";
 
-import * as Clerk from '@clerk/elements/common'
-import * as SignUp from '@clerk/elements/sign-up';
+import * as Clerk from "@clerk/elements/common";
+// import * as SignUp from "@clerk/elements/sign-up";
 
 import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
   return (
-    <section className=" w-full h-screen flex items-center justify-center">
-    <SignUp.Root>
-      <SignUp.Step name="start" className="container">
-        
+    <section className="bg-blue-400 w-full h-screen flex items-center justify-center">
+      {/* <SignUp.Root>
+        <SignUp.Step name="start" className="container">
           <div className="flex flex-col gap-4">
             <div className="mx-auto w-full max-w-sm rounded-md p-6 shadow-lg shadow-blue-500 ">
               <div className="mb-6 flex flex-col items-center">
                 <h1 className="text-[22px] font-bold text-blue-500 ">
                   GreenDev
                 </h1>
-                
-                  <h1 className="mb-2 text-2xl font-bold">Sign-Up</h1>
-               
+
+                <h1 className="mb-2 text-2xl font-bold">Sign-Up</h1>
+
                 <p className="text-muted-foreground">Welcome</p>
               </div>
 
               <div>
                 <div className="grid gap-4">
-                    <Clerk.Field name="username" >
+                  <Clerk.Field name="username">
                     <Clerk.Input asChild>
-                      <Input
-                        type="text"
-                        placeholder="User Name"
-                        required
-                      />
+                      <Input type="text" placeholder="User Name" required />
                     </Clerk.Input>
-                    <Clerk.FieldError/>
+                    <Clerk.FieldError />
                   </Clerk.Field>
 
-                  <Clerk.Field name="identifier" className="flex flex-col" >
+                  <Clerk.Field name="identifier" className="flex flex-col">
                     <Clerk.Input asChild>
                       <Input
                         type="email"
@@ -48,7 +44,7 @@ export default function SignUpPage() {
                         required
                       />
                     </Clerk.Input>
-                    <Clerk.FieldError/>
+                    <Clerk.FieldError />
                   </Clerk.Field>
 
                   <Clerk.Field name="password">
@@ -61,11 +57,13 @@ export default function SignUpPage() {
                         />
                       </div>
                     </Clerk.Input>
-                  </Clerk.Field>
+                  </Clerk.Field> */}
+                  {/* CAPTCHA Widget */}
+                  {/* <div id="clerk-captcha"></div>
 
                   <SignUp.Action submit asChild>
                     <Button type="submit" className="mt-2 w-full">
-                      Sign-in
+                      Sign-up
                     </Button>
                   </SignUp.Action>
                   <Clerk.Connection name="google" asChild>
@@ -85,9 +83,30 @@ export default function SignUpPage() {
               </div>
             </div>
           </div>
-        
+        </SignUp.Step> 
+          {/* verification */}
+        {/* <SignUp.Step name="verifications">
+          <SignUp.Strategy name="email_code">
+            <h1>Check your email</h1>
+            <p>
+              We sent a code to <SignIn.SafeIdentifier />.
+            </p>
+
+            <Clerk.Field name="code">
+              <Clerk.Label>Email code</Clerk.Label>
+              <Clerk.Input />
+              <Clerk.FieldError />
+            </Clerk.Field>
+
+            <SignIn.Action submit>Continue</SignIn.Action>
+          </SignUp.Strategy>
         </SignUp.Step>
-    </SignUp.Root>
+      </SignUp.Root> */}
+
+      {/* --------------------------------------------- */}
+          
+          <SignUp forceRedirectUrl='/' />
+
     </section>
-  )
+  );
 }
