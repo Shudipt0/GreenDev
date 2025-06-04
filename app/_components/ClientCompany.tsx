@@ -26,7 +26,7 @@ interface LogosProps {
 }
 
 const ClientCompany = ({
-  heading = "Client We helped",
+  heading = "We work with",
   logos = [
     {
       id: "logo-1",
@@ -83,8 +83,8 @@ const ClientCompany = ({
 }: LogosProps) => {
   return (
     <section className="py-28">
-      <div className="container flex flex-col items-center text-center">
-        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
+      <div className="container flex flex-col justify-center text-start">
+        <h1 className="mb-8 text-2xl font-bold text-pretty lg:text-4xl">
           {heading}
         </h1>
       </div>

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { FaTimes } from "react-icons/fa";
 import {
@@ -35,13 +34,18 @@ const menu = [
   },
 ];
 
-const Navbar = () => {
-  const [mobilemenu, setMobileMenu] = useState(false);
+interface NavbarProps {
+  mobileMenu: boolean;
+  setMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
+  // const [mobilemenu, setMobileMenu] = useState(false);
   const pathName = usePathname();
 
   return (
-    <section className=" ">
-      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow-sm  bg-white ">
+    <section className="w-full">
+      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white ">
         {/* Desktop Menu */}
         <nav className=" hidden justify-between  lg:flex ">
           {/* Logo */}
@@ -93,22 +97,22 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
+          <div className="w-full flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
               {logo.title}
             </Link>
             {/* Mobile Menu Button */}
-            <button onClick={() => setMobileMenu(!mobilemenu)} className="">
-              {mobilemenu ? <FaTimes /> : <CgMenuRightAlt />}
+            <button onClick={() => setMobileMenu(!mobileMenu)} className="">
+              {mobileMenu ? <FaTimes /> : <CgMenuRightAlt />}
             </button>
           </div>
         </div>
       </div>
       {/* Mobile Dropdown Menu */}
-      {mobilemenu && (
-        <div className="lg:hidden bg-white shadow-md fixed top-14 left-0 w-full z-50">
-          <div className="flex flex-col items-center py-4">
+      {mobileMenu && (
+        
+          <div  className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${mobileMenu? ' max-h-96': 'max-h-0' } `}>
             {menu.map((nav) => (
               <Link
                 key={nav.title}
@@ -138,10 +142,10 @@ const Navbar = () => {
               </SignedIn>
             </div>
           </div>
-        </div>
+     
       )}
       {/* End Mobile Dropdown Menu */}
-      {/* <div className="fixed w-full h-screen top-14 inset-0 bg-gray-500/75 transition-opacity "  aria-hidden="true"></div> */}
+
     </section>
   );
 };

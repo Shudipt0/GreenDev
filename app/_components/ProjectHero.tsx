@@ -11,10 +11,10 @@ const ProjectHero = () => {
   return (
     <section className="py-6 lg:pb-14 lg:pt-4">
       <div className="w-full lg:w-[540px] space-y-4 lg:space-y-8" > 
-        <h4 className="text-[22px] font-semibold text-blue-500 ">
+        <h4 className=" text-[16px] lg:text-[22px] font-semibold text-blue-600 ">
         The work we realised
       </h4>
-      <h1 className="text-[34px] font-bold leading-tight ">
+      <h1 className="text-[22px] lg:text-[34px] font-bold leading-tight ">
         The work we did that made our Client happy and satisfied
       </h1>
       </div>

@@ -17,7 +17,7 @@ interface HeroProps {
 }
 
 const HeroBannner = ({
-  heading = "Blocks built with Shadcn & Tailwind",
+  heading = "We Help People To Bring Their Ideas Alive ",
   description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
   buttons = {
  
@@ -31,7 +31,7 @@ const HeroBannner = ({
   return (
     <section>
       <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ">
-        <div className="mx-auto flex flex-col items-center text-center md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
+        <div className="mx-auto flex flex-col items-center text-start md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
           <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl xl:text-7xl">
             {heading}
           </h1>
