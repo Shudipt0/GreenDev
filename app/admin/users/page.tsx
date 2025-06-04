@@ -1,5 +1,6 @@
 import { clerkClient } from '@clerk/nextjs/server'
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 const UserPage = async () => {
@@ -14,20 +15,22 @@ const UserPage = async () => {
   </caption>
         <thead>
           <tr className='bg-slate-200'>
-            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold '>Image</td>
-            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>Name</td>
-            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>E-mail</td>
-            <td className='border border-gray-300 pl-8 py-3 text-[24px] text-black/70 font-bold'>Role</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[22px] text-black/70 font-bold '>Image</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[22px] text-black/70 font-bold'>Name</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[22px] text-black/70 font-bold'>E-mail</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[22px] text-black/70 font-bold'>Role</td>
+            <td className='border border-gray-300 pl-8 py-3 text-[22px] text-black/70 font-bold'>Edit</td>
           </tr>
         </thead>
         <tbody>
             {users?.data?.map((user)=> (
                 <tr key={user.id} className='' >
                     <td className='hidden'>{user.id}</td>
-                    <td className='border border-gray-300 pl-8 py-3'><Image src={user.imageUrl} alt='profileImage' width={50} height={50} className='w-12 rounded-full ' /></td>
-                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{user.fullName ? user.fullName : '---'}</td>
-                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{user.primaryEmailAddress ? user.primaryEmailAddress.emailAddress : ''}</td>
-                    <td className='border border-gray-300 pl-8 py-3 text-[20px] text-black/70 font-semibold'>{JSON.stringify(user.publicMetadata.role) || 'Default'}</td>
+                    <td className='border border-gray-300 pl-8 py-3'><Image src={user.imageUrl} alt='profileImage' width={40} height={40} className='w-12 rounded-full ' /></td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[18px] text-black/70 font-semibold'>{user.fullName ? user.fullName : '---'}</td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[18px] text-black/70 font-semibold'>{user.primaryEmailAddress ? user.primaryEmailAddress.emailAddress : ''}</td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[18px] text-black/70 font-semibold'>{JSON.stringify(user.publicMetadata.role) || 'Default'}</td>
+                    <td className='border border-gray-300 pl-8 py-3 text-[18px] text-black/70 font-semibold'><Link href={`/admin/users/${user.id}`} className='w-full' >...</Link></td>
                 </tr>
             ))}
         </tbody>
