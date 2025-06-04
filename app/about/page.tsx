@@ -13,11 +13,11 @@ const aboutDescription =  {
 
 const page = () => {
   return (
-    <div className='w-full container mx-auto px-6 lg:px-28 mt-32 flex flex-col items-center '>
+    <div className=' w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 flex flex-col items-center '>
       <Common page={aboutDescription.page} title={aboutDescription.title}  description={aboutDescription.description} 
       buttonText={aboutDescription.buttonText} buttonLink={aboutDescription.buttonLink} />
 
-      <div className='w-full flex flex-col lg:flex-row gap-16 lg:py-32 ' >
+      <div className='w-full flex flex-col lg:flex-row gap-16 py-[70px] lg:py-32 ' >
         {/* left site */}
         <div className='w-full lg:w-[330px] space-y-5  ' >
           <h4 className='text-[22px] text-blue-500 font-bold ' >The team</h4>

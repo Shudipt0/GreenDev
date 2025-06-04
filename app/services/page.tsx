@@ -44,7 +44,7 @@ const cartDescription = [
 
 const page = () => {
   return (
-    <div className="w-full container mx-auto px-6 lg:px-28 mt-32 flex flex-col items-center ">
+    <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 flex flex-col items-center ">
       {/* part 1 */}
       <Common
         page={serviceDescription.page}
@@ -55,7 +55,7 @@ const page = () => {
       />
       {/* part 2 */}
 
-      <div className="w-full lg:py-32 ">
+      <div className="w-full py-[70px] lg:py-32 ">
         <h4 className="text-[22px] text-blue-500 font-bold pb-5 ">
           Our Process
         </h4>
@@ -80,9 +80,9 @@ const page = () => {
       {/* part 3 */}
       <div className="w-full lg:h-[435px] flex items-center relative">
         <div className="hidden lg:inline  absolute top-0 left-[30%] ">
-          <Image src={victorUp} alt="victorUp" />{" "}
+          <Image src={victorUp} alt="victorUp" />
         </div>
-        <div className=" w-full grid grid-cols-1 lg:grid-cols-4 justify-between items-center ">
+        <div className=" w-full grid grid-cols-1 lg:grid-cols-4 justify-between items-center space-y-12 lg:space-y-0 ">
           {/* cart */}
           {cartDescription.map((item, index) => (
             <div key={index} className="lg:w-[250px] space-y-4">
@@ -93,23 +93,23 @@ const page = () => {
                 {item.title}
               </h1>
               <p className="text-[16px] text-[#0E0E2C]/60 ">
-                {item.description}{" "}
+                {item.description}
               </p>
             </div>
           ))}
         </div>
         {/* images */}
         <div className="hidden lg:inline absolute bottom-0 left-[10%] ">
-          <Image src={victorDown1} alt="victordown" />{" "}
+          <Image src={victorDown1} alt="victordown" />
         </div>
         <div className="hidden lg:inline absolute bottom-0 right-[20%] ">
-          <Image src={victorDown2} alt="victordown" />{" "}
+          <Image src={victorDown2} alt="victordown" />
         </div>
       </div>
 
       {/* part 4 */}
 
-      <div className="w-full lg:py-32 ">
+      <div className="w-full py-28 lg:py-32 ">
         <ServicePageCarousel />
       </div>
     </div>
