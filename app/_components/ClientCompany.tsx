@@ -88,8 +88,8 @@ const ClientCompany = ({
           {heading}
         </h1>
       </div>
-      <div className="pt-4 md:pt-8 lg:pt-10">
-        <div className="relative mx-auto flex items-center justify-center lg:max-w-7xl">
+      <div className="w-full pt-4 md:pt-8 lg:pt-10">
+        <div className="relative mx-auto flex items-center justify-center w-full lg:max-w-7xl">
           <Carousel
             opts={{ loop: true }}
             plugins={[AutoScroll({ playOnInit: true })]}
