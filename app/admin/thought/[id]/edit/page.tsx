@@ -8,7 +8,7 @@ import React from 'react'
 type Props = {
     params: Promise<{id: string}>
 }
-export const ThoughtEditPage = async (props: Props) => {
+ const ThoughtEditPage = async (props: Props) => {
        const {id} = await props.params;
 
     const thoughts = await prisma.thought.findUnique({
@@ -28,3 +28,5 @@ export const ThoughtEditPage = async (props: Props) => {
     </div>
   )
 }
+
+export default ThoughtEditPage

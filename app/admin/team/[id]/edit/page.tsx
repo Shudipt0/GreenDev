@@ -7,7 +7,7 @@ import { prisma } from '@/lib/utils'
 type Props = {
     params: Promise<{id: string}>
 }
-export const TeamEditPage = async (props: Props) => {
+ const TeamEditPage = async (props: Props) => {
        const {id} = await props.params;
 
     const teamMember = await prisma.team.findUnique({
@@ -27,3 +27,5 @@ export const TeamEditPage = async (props: Props) => {
     </div>
   )
 }
+
+export default TeamEditPage
