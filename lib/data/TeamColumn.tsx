@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import { deleteTeamMember } from "@/app/actions/service/team"
+import Image from "next/image"
 
 
 
@@ -36,30 +37,43 @@ export const columns: ColumnDef<TeamMember>[] = [
  {
     accessorKey: "id",
     header: "ID",
-    cell: ({ row }) => <div className="capitalize ">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize text-start">{row.getValue("name")}</div>
     ),
   },
   {
     accessorKey: "profession",
   header: "Profession",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("profession")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("profession")}</div>,
   },
   {
     accessorKey: "bio_data",
   header: "Bio-data",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("bio_data")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">
+        {/* Display only the first three words of the description */}
+        {(row.getValue("bio_data") as string)
+          .split(" ")
+          .slice(0, 3)
+          .join(" ")}
+    </div>,
   },
    {
     accessorKey: "image",
     header: "Image",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("image")}</div>
+      <div className="capitalize">
+        <Image
+          src={row.getValue("image")}
+          alt={row.getValue("name")}
+          width={50}
+          height={50}
+        />
+      </div>
     ),
   },
   

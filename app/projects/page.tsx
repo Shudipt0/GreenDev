@@ -4,7 +4,6 @@ import image3 from "@/app/images/project4.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
-import ProjectShowcaseCart from "../_components/ProjectShowcaseCart";
 import { IoArrowForwardSharp } from "react-icons/io5";
 
 
@@ -36,7 +35,7 @@ const page = () => {
         <Link href='#'>
           
           <button className="flex items-center gap-3 text-[18px] lg:text-[22px] font-medium px-3 py-1 ">
-            Check our Projects
+            Let's Talk
             <span className="text-blue-500 pt-1 ">
               <IoArrowForwardSharp />
             </span>

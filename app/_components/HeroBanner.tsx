@@ -1,7 +1,9 @@
-import { ArrowDownRight, Star } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface HeroProps {
+  welcoming?: string;
   heading?: string;
   description?: string;
   buttons?: {
@@ -17,40 +19,55 @@ interface HeroProps {
 }
 
 const HeroBannner = ({
+  welcoming = "Hello,",
   heading = "We Help People To Bring Their Ideas Alive ",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+  description = "A talented team to help you in your journey on creating useful and easy to use product",
   buttons = {
- 
+    primary: {
+      text: "Let's Talk",
+      url: "/contact",
+    },
     secondary: {
       text: "Check our Services",
       url: "/services",
     },
   },
-
 }: HeroProps) => {
   return (
-    <section className="">
-      <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ">
-        <div className="mx-auto flex flex-col items-center text-start md:ml-auto lg:max-w-3xl lg:items-start lg:text-left">
+    <section className="relative">
+      <div className="  container grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ">
+        <div className="mx-auto flex flex-col items-start text-start md:ml-auto lg:max-w-3xl  lg:text-left">
+          <h4 className="text-[16px] lg:text-[22px] text-blue-500 font-bold ">
+            {welcoming}
+          </h4>
           <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl xl:text-7xl">
             {heading}
           </h1>
           <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
             {description}
           </p>
-         
-          <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-            {buttons.secondary && (
-              <Button asChild variant="outline">
-                <a href={buttons.secondary.url}>
-                  {buttons.secondary.text}
-                  <ArrowDownRight className="size-4" />
-                </a>
-              </Button>
-            )}
+
+          <div className="w-full md:w-1/2 flex flex-col lg:flex-row gap-4">
+            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+              {buttons.primary && (
+                <button className="px-3 py-1 text-white font-semibold bg-blue-500 rounded">
+                  <Link href={buttons.primary.url}>{buttons.primary.text}</Link>
+                </button>
+              )}
+            </div>
+            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+              {buttons.secondary && (
+                <Button asChild variant="outline">
+                  <a href={buttons.secondary.url}>
+                    {buttons.secondary.text}
+                    <ArrowDownRight className="size-4" />
+                  </a>
+                </Button>
+              )}
+            </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="hidden md:flex">
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
             alt="placeholder hero"

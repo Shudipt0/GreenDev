@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { deleteThought } from "@/app/actions/service/thought"
+import Image from "next/image"
 
 
 
@@ -36,33 +37,46 @@ export const columns: ColumnDef<Thoughts>[] = [
  {
     accessorKey: "id",
     header: "ID",
-    cell: ({ row }) => <div className="capitalize ">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "experts_name",
     header: "Experts Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("experts_name")}</div>
+      <div className="capitalize text-start">{row.getValue("experts_name")}</div>
     ),
   },
   
   {
     accessorKey: "bio_data",
   header: "Bio-Data",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("bio_data")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("bio_data")}</div>,
   },
   {
     accessorKey: "thought",
     header: "Thought",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("thought")}</div>
+      <div className="capitalize text-start">
+          {/* Display only the first three words of the description */}
+        {(row.getValue("thought") as string)
+          .split(" ")
+          .slice(0, 3)
+          .join(" ")}
+      </div>
     ),
   },
    {
     accessorKey: "image",
     header: "Image",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("image")}</div>
+      <div className="capitalize">
+        <Image
+          src={row.getValue("image")}
+          alt={row.getValue("serviceName")}
+          width={50}
+          height={50}
+        />
+      </div>
     ),
   },
   

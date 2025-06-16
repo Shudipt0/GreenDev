@@ -35,30 +35,36 @@ export const columns: ColumnDef<UserContact>[] = [
  {
     accessorKey: "id",
     header: "ID",
-    cell: ({ row }) => <div className="capitalize ">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize text-start">{row.getValue("name")}</div>
     ),
   },
   {
     accessorKey: "email",
   header: "E-mail",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("email")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("email")}</div>,
   },
   {
     accessorKey: "phone",
   header: "Phone",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("phone")}</div>,
+    cell: ({ row }) => <div className="capitalize text-start">{row.getValue("phone")}</div>,
   },
    {
     accessorKey: "message",
     header: "Message",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("message")}</div>
+      <div className="capitalize text-start">
+          {/* Display only the first three words of the description */}
+        {(row.getValue("message") as string)
+          .split(" ")
+          .slice(0, 3)
+          .join(" ")}
+      </div>
     ),
   },
   
