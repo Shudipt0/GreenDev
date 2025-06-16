@@ -7,16 +7,16 @@ import {
 
 const ContactpageAccour = () => {
   return (
-    <div className=" w-full lg:h-[660px] flex flex-col lg:flex-row justify-between items-center  ">
+    <div className=" w-full h-full py-20 md:py-0 lg:h-[660px] flex flex-col lg:flex-row justify-between items-center  ">
       {/* left site */}
       <div className="lg:w-[480px] space-y-4">
-        <h3 className="text-[22px] font-bold text-blue-500 leading-tight">
+        <h3 className="text-[16px] lg:text-[22px] text-blue-500 font-bold">
           FAQ
         </h3>
         <h1 className="text-[40px] text-black font-bold leading-tight">
           Here are Some Answer For Frequntly asked Questions
         </h1>
-        <p className="text-[22px] text-[#0E0E2C]/60 ">
+        <p className="text-[18px] lg:text-[22px] text-[#0E0E2C]/60 ">
           We got alot of Message With the same Questions so here are some fast
           answer for populare Question
         </p>

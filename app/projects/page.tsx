@@ -21,33 +21,6 @@ const numbering = [
   { title: "Solutions Created", number: "+10" },
   { title: "Bussiness Growed", number: "+25" },
 ];
-
-const ShowcaseItem = [
-  {
-    caterogy: "Web / App Development",
-    title: "Delex Relay , a delivery platfrome",
-    description:
-      "Delex is a Delivery Platforme for bussiness owner And indivudial who want to send packages from a point to an other ,Delex offer a tracking system too ",
-    image: image1,
-    link: "#",
-  },
-  {
-    caterogy: "UI/UX Design",
-    title: "Cooke Me ,Fresh food At your Home",
-    description:
-      "Cooke me is an platform that offer fresh meal with a cheap price and allow indivudial to sell their meals  ",
-    image: image2,
-    link: "#",
-  },
-  {
-    caterogy: "UI/UX Design",
-    title: "ADOC,Your Online Medical Appoinments",
-    description:
-      "ADOC Is an online Medical appoinment, That allow user To take an appoinment with a doctor , it alos work as a medical files Holder",
-    image: image3,
-    link: "#",
-  },
-];
 const page = () => {
   return (
     <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 flex flex-col items-center  ">
@@ -84,14 +57,11 @@ const page = () => {
 
       {/* showcase items */}
 
-      <div className="w-full pt-32 lg:space-y-28 ">
-        {/* {ShowcaseItem.map((item, index) => (
-           <ProjectShowcaseCart item={item} key={index}  />
-         ))} */}
+      <div className="w-full pt-20 lg:pt-32 lg:space-y-28 ">
         {/* part 1 */}
         <div className=" w-full flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0 ">
           {/* left site */}
-          <div className="lg:w-[540px] space-y-6">
+          <div className="lg:w-[540px]  mt-10 md:mt-0 space-y-6">
             <h3 className="text-[16px] lg:text-[22px] font-bold text-blue-500 leading-tight">
               Web / App Development
             </h3>
@@ -101,7 +71,7 @@ const page = () => {
             <p className="text-[18px] lg:text-[22px] text-[#0E0E2C]/60 ">
               Delex is a Delivery Platforme for bussiness owner And indivudial
               who want to send packages from a point to an other ,Delex offer a
-              tracking system too{" "}
+              tracking system too
             </p>
             <div className="hidden lg:flex">
             <Link href="#" >
@@ -143,7 +113,7 @@ const page = () => {
             </Link>
             </div>
           {/* left site */}
-          <div className="w-full lg:w-[540px]  ">
+          <div className="w-full  mt-10 md:mt-0 lg:w-[540px]  ">
             <Image src={image2} alt="image1" className="w-full lg:w-[540px]" />
           </div>
           {/* right site */}
@@ -175,7 +145,7 @@ const page = () => {
         {/* part 3 */}
         <div className=" w-full flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0 pt-20 lg:pt-0">
           {/* left site */}
-          <div className="lg:w-[540px] space-y-6">
+          <div className="lg:w-[540px]  mt-10 md:mt-0 space-y-6">
             <h3 className="text-[16px] lg:text-[22px] font-bold text-blue-500 leading-tight">
               Web / App Development
             </h3>
@@ -217,7 +187,7 @@ const page = () => {
 
       {/* button */}
       <div className="py-[60px] lg:py-32 " >
-        <Link href="#">
+        <Link href="/allProjects">
               <button className="flex items-center gap-3 text-sm text-blue-500 px-5 py-3 border-2 border-blue-500 rounded font-semibold mt-5 ">
                 Explore More Projects
                 <span>

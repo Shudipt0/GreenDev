@@ -57,7 +57,7 @@ const ProjectHero = () => {
             </div>
         </div>
       </div>
-      <Link href="/projects" ><button className="flex items-center gap-3 text-sm text-blue-500 px-5 py-3 border-2 border-blue-500 rounded font-semibold ">Explore More Projects <span>
+      <Link href="/allProjects" ><button className="flex items-center gap-3 text-sm text-blue-500 px-5 py-3 border-2 border-blue-500 rounded font-semibold ">Explore More Projects <span>
           <IoIosArrowForward size={20} />
         </span> </button></Link>
       </div>

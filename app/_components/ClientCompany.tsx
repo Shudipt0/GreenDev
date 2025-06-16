@@ -32,57 +32,57 @@ const ClientCompany = ({
       id: "logo-1",
       description: "Logo 1",
       image: "https://shadcnblocks.com/images/block/logos/astro-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-2",
       description: "Logo 2",
       image: "https://shadcnblocks.com/images/block/logos/figma-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-3",
       description: "Logo 3",
       image: "https://shadcnblocks.com/images/block/logos/nextjs-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-4",
       description: "Logo 4",
       image: "https://shadcnblocks.com/images/block/logos/react-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-5",
       description: "Logo 5",
       image:
         "https://shadcnblocks.com/images/block/logos/shadcn-ui-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-6",
       description: "Logo 6",
       image:
         "https://shadcnblocks.com/images/block/logos/supabase-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-5 md:h-7 w-20  md:w-auto",
     },
     {
       id: "logo-7",
       description: "Logo 7",
       image:
         "https://shadcnblocks.com/images/block/logos/tailwind-wordmark.svg",
-      className: "h-4 w-auto",
+      className: "h-3 md:h-5 w-20  md:w-auto",
     },
     {
       id: "logo-8",
       description: "Logo 8",
       image: "https://shadcnblocks.com/images/block/logos/vercel-wordmark.svg",
-      className: "h-7 w-auto",
+      className: "h-3 md:h-5 w-20  md:w-auto",
     },
   ],
 }: LogosProps) => {
   return (
-    <section className="py-28">
+    <section className="py-16 md:py-20 lg:py-28">
       <div className="container flex flex-col justify-center text-start">
         <h1 className="mb-8 text-2xl font-bold text-pretty lg:text-4xl">
           {heading}
@@ -93,6 +93,7 @@ const ClientCompany = ({
           <Carousel
             opts={{ loop: true }}
             plugins={[AutoScroll({ playOnInit: true })]}
+            className="w-full"
           >
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
