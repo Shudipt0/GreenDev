@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { FaTimes } from "react-icons/fa";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import ThemeToggleButton from "./Theme-toggleButton";
 
 const logo = {
   title: "GreenDev",
@@ -36,12 +37,12 @@ interface NavbarProps {
 }
 
 const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
-  // const [mobilemenu, setMobileMenu] = useState(false);
+  // Get the current pathname to highlight the active menu item
   const pathName = usePathname();
 
   return (
     <section className="w-full">
-      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white ">
+      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-gray-800 transition-all ease-in-out duration-300">
         {/* Desktop Menu */}
         <nav className=" hidden justify-between  lg:flex ">
           {/* Logo */}
@@ -75,6 +76,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
           </div>
 
           <div className="flex gap-2">
+            <ThemeToggleButton/>
             {/* sign in / sign up buttons */}
             <SignedOut>
               <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">

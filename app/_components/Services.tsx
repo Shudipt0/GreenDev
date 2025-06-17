@@ -1,7 +1,11 @@
-import { IoIosArrowForward } from "react-icons/io";
+
+import { prisma } from "@/lib/utils";
 import ServiceCard from "./ServiceCard";
 
-const Services = () => {
+const Services =  () => {
+
+  // const services = await prisma.service.findMany();
+  // console.log(services);
   return (
     <section className="py-10">
         <div className="py-4">
