@@ -76,6 +76,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
           </div>
 
           <div className="flex gap-2">
+            {/* Theme Toggle Button */}
             <ThemeToggleButton/>
             {/* sign in / sign up buttons */}
             <SignedOut>
@@ -127,6 +128,9 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
           ))}
 
           <div className="flex gap-2 mt-4 ">
+            {/* Theme Toggle Button */}
+            <ThemeToggleButton/>
+            {/* sign in / sign up buttons */}
             <SignedOut>
               <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
                 <Link href="/sign-in">Log In</Link>
