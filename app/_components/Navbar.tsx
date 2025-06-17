@@ -4,11 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { FaTimes } from "react-icons/fa";
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const logo = {
   title: "GreenDev",
@@ -79,13 +75,12 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
           </div>
 
           <div className="flex gap-2">
+            {/* sign in / sign up buttons */}
             <SignedOut>
               <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">
-                
                 <Link href="/sign-in">Log In</Link>
               </button>
               <button className="px-4 text-[14px] font-bold text-white bg-gray-500 rounded-md transition-colors hover:bg-gray-600">
-                
                 <Link href="/sign-up">Sign Up</Link>
               </button>
             </SignedOut>
@@ -111,41 +106,40 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
       </div>
       {/* Mobile Dropdown Menu */}
       {mobileMenu && (
-        
-          <div  className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${mobileMenu? ' max-h-96': 'max-h-0' } `}>
-            {menu.map((nav) => (
-              <Link
-                key={nav.title}
-                href={nav.url}
-                className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
-                  pathName === nav.url ? "text-black" : "text-[#0E0E2C]/60"
-                }`}
-                onClick={() => setMobileMenu(false)}
-              >
-                {nav.title}
-              </Link>
-            ))}
+        <div
+          className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${
+            mobileMenu ? " max-h-96" : "max-h-0"
+          } `}
+        >
+          {menu.map((nav) => (
+            <Link
+              key={nav.title}
+              href={nav.url}
+              className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
+                pathName === nav.url ? "text-black" : "text-[#0E0E2C]/60"
+              }`}
+              onClick={() => setMobileMenu(false)}
+            >
+              {nav.title}
+            </Link>
+          ))}
 
-            <div className="flex gap-2 mt-4 ">
-              <SignedOut>
-                <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
-                  
-                  <Link href="/sign-in">Log In</Link>
-                </button>
-                <button className="px-4 py-1 text-[14px] font-bold text-white bg-gray-500 rounded transition-colors hover:bg-gray-600">
-                 
-                  <Link href="/sign-up">Sign Up</Link>
-                </button>
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
+          <div className="flex gap-2 mt-4 ">
+            <SignedOut>
+              <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">
+                <Link href="/sign-in">Log In</Link>
+              </button>
+              <button className="px-4 py-1 text-[14px] font-bold text-white bg-gray-500 rounded transition-colors hover:bg-gray-600">
+                <Link href="/sign-up">Sign Up</Link>
+              </button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
-     
+        </div>
       )}
       {/* End Mobile Dropdown Menu */}
-
     </section>
   );
 };
