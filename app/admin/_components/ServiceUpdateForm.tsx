@@ -18,7 +18,7 @@ const ServiceUpdateFormPage = (service: Service) => {
       <div className="w-[700px]">
         <form
           action={upDateService}
-          className="w-full border rounded-lg flex flex-col gap-4 p-8 "
+          className="w-full bg-green-100 border rounded-lg flex flex-col gap-4 p-8 "
         >
           <input
             type="hidden"

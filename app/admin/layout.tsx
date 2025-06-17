@@ -19,8 +19,7 @@ export default function Page(props: Props) {
       }
     >
       <AppSidebar />
-      <SidebarInset>
-      
+      <SidebarInset >      
        {props.children}
       </SidebarInset>
     </SidebarProvider>

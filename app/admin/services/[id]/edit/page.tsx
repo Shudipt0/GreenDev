@@ -11,7 +11,7 @@ const page = async (props: Props) => {
     where: { id: Number(id) },
   });
   return (
-    <div>
+    <div className="w-full h-fit bg-backgroundBanner bg-no-repeat bg-cover">
       {service && (
         <ServiceUpdateFormPage
           id={service.id.toString()}

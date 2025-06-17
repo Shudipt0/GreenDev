@@ -14,9 +14,9 @@ const ProjectViewPage = async (props: Props) => {
         where: {id: Number(id)},
     })
   return (
-    <div className='w-full flex flex-col items-center justify-center ' >
+    <div className='w-full flex flex-col items-center justify-center bg-backgroundBanner bg-no-repeat bg-cover' >
       <div className='text-[24px] font-semibold text-black/80 pt-10 underline ' ><Link href='/admin/projects'>Back</Link></div>
-      <div className='w-full p-32 space-y-6  ' >
+      <div className='w-full p-20 space-y-6  ' >
         <h4 className='text-lg font-semibold text-black/60 bg-slate-100 px-8 py-3 rounded shadow-sm'>Id: {projects?.id}</h4>
         <h1 className='text-3xl font-bold text-black/80 bg-slate-100 px-8 py-3 rounded shadow-sm' >{projects?.category}</h1>
         <p className='text-lg font-semibold text-black/60 bg-slate-100 px-8 py-3 rounded shadow-sm' >{projects?.title}</p>

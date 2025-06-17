@@ -15,7 +15,7 @@ type Props = {
       where: {id: Number(id)},
     });
   return (
-    <div>
+    <div className="w-full h-fit bg-backgroundBanner bg-no-repeat bg-cover">
      {projects && (
         <ProjectUpdateFormPage
           id={projects.id.toString()}

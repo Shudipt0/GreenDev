@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 const page = () => {
   return (
-    <div className=' w-full ' >
-      
+    <div className=' w-full ' >      
       <Image src={banner} alt='banner' className='bg-cover h-screen' />
     </div>
   )

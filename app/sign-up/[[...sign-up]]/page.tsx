@@ -12,7 +12,7 @@ import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
   return (
-    <section className="bg-blue-400 w-full h-screen flex items-center justify-center">
+    <section className="bg-backgroundBanner bg-no-repeat bg-cover w-full h-screen flex items-center justify-center">
       {/* <SignUp.Root>
         <SignUp.Step name="start" className="container">
           <div className="flex flex-col gap-4">

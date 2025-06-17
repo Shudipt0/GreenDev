@@ -10,11 +10,11 @@ const page = () => {
   const { imageUrl } = useImageContext();
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between p-24 bg-backgroundBanner bg-no-repeat bg-cover">
       <div className="w-[700px] ">
         <form
           action={action}
-          className="w-full border rounded-lg flex flex-col gap-4 p-8 "
+          className="w-full border rounded-lg flex flex-col gap-4 p-8 bg-green-100 "
         >
           <label htmlFor="name">Name:</label>
           <input

@@ -20,7 +20,7 @@ const TeamUpdateFormPage = (teamMember: TeamMember) => {
       <div className="w-[700px]">
         <form
           action={upDateTeamMember}
-          className="w-full border rounded-lg flex flex-col gap-4 p-8 "
+          className="w-full bg-green-100 border rounded-lg flex flex-col gap-4 p-8 "
         >
           <input
             type="hidden"

@@ -99,7 +99,7 @@ export function DataTable(props: Props) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div className="rounded-md border bg-green-100">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

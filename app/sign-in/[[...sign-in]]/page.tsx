@@ -11,7 +11,7 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
   return (
-    <section className=" w-full h-screen flex items-center justify-center">
+    <section className="bg-backgroundBanner bg-no-repeat bg-cover w-full h-screen flex items-center justify-center">
       {/* <SignIn.Root>
           <SignIn.Step name="start">
         <h1>Sign in to your account</h1>
