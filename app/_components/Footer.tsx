@@ -80,7 +80,7 @@ const Footer = ({
     <section className=" mt-32 ">
       <div className="container">
         <footer>
-          <div className=" grid grid-cols-2 gap-8 lg:grid-cols-6 px-6 lg:px-28 py-10 lg:pt-14 lg:pb-8 bg-[#A0A4AB]/10">
+          <div className=" grid grid-cols-2 gap-8 lg:grid-cols-6 px-6 lg:px-28 py-10 lg:pt-14 lg:pb-8 bg-[#A0A4AB]/10 dark:bg-[#0A0A0A]">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
                 <a href="https://shadcnblocks.com">

@@ -9,7 +9,7 @@ const Services =  () => {
   return (
     <section className="py-10">
         <div className="py-4">
-            <h4 className="text-[16px] lg:text-[22px] font-semibold text-blue-600 ">The Services We Offers</h4>
+            <h4 className="text-[16px] lg:text-[22px] font-semibold text-blue-600 dark:text-white ">The Services We Offers</h4>
         </div>
       <div className=" grid grid-cols-1 lg:grid-cols-4 gap-8 lg:space-y-8">
         <div className=" col-span-1 lg:col-span-2">

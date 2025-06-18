@@ -8,7 +8,7 @@ const AboutHero = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center ">
         {/* left side */}
         <div className="w-full lg:w-[540px] col-span-1 space-y-4 lg:space-y-8">
-          <h4 className=" text-[16px] lg:text-[22px] font-semibold text-blue-600 ">
+          <h4 className=" text-[16px] lg:text-[22px] font-semibold text-blue-600 dark:text-white ">
             The Team behind DigitUX
           </h4>
           <h1 className="text-[22px] lg:text-[34px] font-bold leading-tight ">

@@ -7,8 +7,8 @@ import Services from "./_components/Services";
 
 export default function Home() {
   return (
-    <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32">
-      <div className="fixed -mt-10 right-0"><DashboardButton /></div>
+    <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 ">
+      <div className="hidden md:inline fixed -mt-10 right-0"><DashboardButton /></div>
       <HeroBannner />
       <ClientCompany />
       <Services />

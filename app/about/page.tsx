@@ -20,7 +20,7 @@ const page = () => {
       <div className='w-full flex flex-col lg:flex-row gap-16 py-[70px] lg:py-32 ' >
         {/* left site */}
         <div className='w-full lg:w-[330px] space-y-5  ' >
-          <h4 className='text-[22px] text-blue-500 font-bold ' >The team</h4>
+          <h4 className='text-[22px] text-blue-500 dark:text-white font-bold ' >The team</h4>
           <h1 className='text-[40px] font-bold leading-tight ' >Meet The Awesome and Creative members of Our Team </h1>
         </div>
         {/* right site */}

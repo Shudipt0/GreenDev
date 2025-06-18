@@ -42,7 +42,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
 
   return (
     <section className="w-full">
-      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-gray-800 transition-all ease-in-out duration-300">
+      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-[#090909] transition-all ease-in-out duration-300">
         {/* Desktop Menu */}
         <nav className=" hidden justify-between  lg:flex ">
           {/* Logo */}
@@ -60,7 +60,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
                 key={nav.title}
                 href={nav.url}
                 className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
-                  pathName === nav.url ? "text-black" : "text-[#0E0E2C]/60  "
+                  pathName === nav.url ? "text-black dark:text-white " : "text-[#0E0E2C]/60 dark:text-white/60 "
                 }`}
               >
                 {nav.title}
@@ -115,7 +115,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
       {/* Mobile Dropdown Menu */}
       {mobileMenu && (
         <div
-          className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${
+          className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white dark:bg-[#262A31] shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${
             mobileMenu ? " max-h-96" : "max-h-0"
           } `}
         >
@@ -124,7 +124,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
               key={nav.title}
               href={nav.url}
               className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
-                pathName === nav.url ? "text-black" : "text-[#0E0E2C]/60"
+                pathName === nav.url ? "text-black dark:text-white " : "text-[#0E0E2C]/60 dark:text-white/60 "
               }`}
               onClick={() => setMobileMenu(false)}
             >

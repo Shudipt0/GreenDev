@@ -37,7 +37,7 @@ const allProjects = () => {
       {/* texts */}
       <div className="text-start lg:text-center space-y-3 lg:space-y-6">
         <h1 className="text-2xl lg:text-3xl font-bold ">Project Gallery</h1>
-        <p className="text-[18px] lg:text-[22px] text-[#0E0E2C]/60 lg:w-[732px] leading-tight">
+        <p className="text-[18px] lg:text-[22px] text-[#0E0E2C]/60  dark:text-white/60  lg:w-[732px] leading-tight">
           Explore a collection of projects showcasing various technologies and
           creative solutions.
         </p>

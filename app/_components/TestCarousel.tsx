@@ -19,7 +19,7 @@ const TestCarousel = () => {
         <div
        
             onClick={clickHandler}
-             className="absolute bottom-0 left-[32%] lg:left-[44%] h-[48px] w-[48px] text-blue-500 rounded-full border-2 border-blue-500 z-10 flex items-center justify-center cursor-pointer"
+             className="absolute bottom-0 left-[32%] lg:left-[44%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-10 flex items-center justify-center cursor-pointer"
           >
             <IoArrowBackSharp />
           </div>
@@ -27,7 +27,7 @@ const TestCarousel = () => {
        renderArrowNext={(clickHandler, hasNext) => (
       <div
             onClick={clickHandler}
-            className="absolute bottom-0 right-[32%] lg:right-[44%] h-[48px] w-[48px] text-blue-500 rounded-full border-2 border-blue-500 z-5 flex items-center justify-center cursor-pointer hover:opacity-90"
+            className="absolute bottom-0 right-[32%] lg:right-[44%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-5 flex items-center justify-center cursor-pointer hover:opacity-90"
           >
             <IoArrowForwardSharp />
           </div>)}

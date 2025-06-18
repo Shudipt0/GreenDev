@@ -11,7 +11,7 @@ const ProjectHero = () => {
   return (
     <section className="py-6 lg:pb-14 lg:pt-4">
       <div className="w-full lg:w-[540px] space-y-4 lg:space-y-8" > 
-        <h4 className=" text-[16px] lg:text-[22px] font-semibold text-blue-600 ">
+        <h4 className=" text-[16px] lg:text-[22px] font-semibold text-blue-600 dark:text-white ">
         The work we realised
       </h4>
       <h1 className="text-[22px] lg:text-[34px] font-bold leading-tight ">
@@ -24,8 +24,8 @@ const ProjectHero = () => {
         <div className="  col-span-1">
             <Image src={project1image} alt="project1image"  />
             <div className=" mt-2 lg:mt-3 ">
-                <h4 className="text-[12px] lg:text-sm font-bold text-blue-500 ">UI/UX</h4>
-                <p className="text-[12px] lg:text-sm text-gray-500 ">Delex Relay</p>
+                <h4 className="text-[12px] lg:text-sm font-bold text-blue-500 dark:text-white ">UI/UX</h4>
+                <p className="text-[12px] lg:text-sm text-gray-500 dark:text-white/80 ">Delex Relay</p>
             </div>
         </div>
         <div className=" col-span-1">
@@ -57,7 +57,7 @@ const ProjectHero = () => {
             </div>
         </div>
       </div>
-      <Link href="/allProjects" ><button className="flex items-center gap-3 text-sm text-blue-500 px-5 py-3 border-2 border-blue-500 rounded font-semibold ">Explore More Projects <span>
+      <Link href="/allProjects" ><button className="flex items-center gap-3 text-sm text-blue-500 dark:text-white px-5 py-3 border-2 border-blue-500 dark:border-white rounded font-semibold ">Explore More Projects <span>
           <IoIosArrowForward size={20} />
         </span> </button></Link>
       </div>

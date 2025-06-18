@@ -117,8 +117,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar {...props}>
       <SidebarHeader>
       <div className="flex items-end gap-4">
-        <h1 className="text-[22px] text-black font-bold " >Dashboard</h1>
-        <h3 className="text-[16px] font-serif text-blue-600 ">GreenDev.</h3>
+        <h1 className="text-[22px] text-black dark:text-white font-bold " >Dashboard</h1>
+        <h3 className="text-[16px] font-serif text-blue-600 dark:text-white ">GreenDev.</h3>
       </div>
         <SearchForm />
       </SidebarHeader>
@@ -131,7 +131,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild className={`${pathName === item.url? 'bg-blue-200 hover:bg-blue-200': ''}`} >
+                    <SidebarMenuButton asChild className={`${pathName === item.url? 'bg-blue-200 hover:bg-blue-200 dark:bg-gray-500 ': ''}`} >
                       <a href={item.url}>{item.title}</a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

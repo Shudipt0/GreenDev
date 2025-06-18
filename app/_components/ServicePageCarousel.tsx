@@ -16,7 +16,7 @@ const ServicePageCarousel = () => {
         renderArrowPrev={(clickHandler, hasPrev) => (
           <div
             onClick={clickHandler}
-            className="absolute bottom-0 left-[32%] lg:left-[75%] h-[48px] w-[48px] text-blue-500 rounded-full border-2 border-blue-500 z-10 flex items-center justify-center cursor-pointer"
+            className="absolute bottom-0 left-[32%] lg:left-[75%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-10 flex items-center justify-center cursor-pointer"
           >
             <IoArrowBackSharp />
           </div>
@@ -24,7 +24,7 @@ const ServicePageCarousel = () => {
         renderArrowNext={(clickHandler, hasNext) => (
           <div
             onClick={clickHandler}
-            className="absolute bottom-0 right-[32%] lg:right-[12%] h-[48px] w-[48px] text-blue-500 rounded-full border-2 border-blue-500 z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+            className="absolute bottom-0 right-[32%] lg:right-[12%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
           >
             <IoArrowForwardSharp />
           </div>
@@ -35,13 +35,13 @@ const ServicePageCarousel = () => {
         <div className=" w-full lg:h-[450px] flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-16 relative ">
           {/* left site */}
           <div className="w-full text-start space-y-5 ">
-            <h4 className="text-[16px] lg:text-[22px] text-blue-500 font-semibold ">
+            <h4 className="text-[16px] lg:text-[22px] text-blue-500 dark:text-white font-semibold ">
               Our Services
             </h4>
             <h1 className=" text-[22px] lg:text-[40px] font-bold leading-tight ">
               Ui /Ux , Web Design
             </h1>
-            <p className="text-[#0E0E2C]/60 text-[18px] lg:text-[22px] ">
+            <p className="text-[#0E0E2C]/60 dark:text-white/60 text-[18px] lg:text-[22px] ">
               With a team of the best Digital Product Designer In the world at
               your hand , their goal is to create usefull andeasy to use
               products for you potentials users
@@ -54,7 +54,7 @@ const ServicePageCarousel = () => {
             </div>
           </div>
           <div className="absolute hidden lg:top-0 lg:right-0 lg:flex ">
-            <Image src={tiktik} alt="tiktik" />
+            <Image src={tiktik} alt="tiktik" className="dark:invert" />
           </div>
         </div>
 

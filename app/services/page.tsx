@@ -56,7 +56,7 @@ const page = () => {
       {/* part 2 */}
 
       <div className="w-full py-[70px] lg:py-32 ">
-        <h4 className="text-[22px] text-blue-500 font-bold pb-5 ">
+        <h4 className="text-[22px] text-blue-500 dark:text-white font-bold pb-5 ">
           Our Process
         </h4>
 
@@ -69,7 +69,7 @@ const page = () => {
           </div>
           {/* right site */}
           <div className="w-full  ">
-            <p className="text-[#0E0E2C]/60 text-[22px] ">
+            <p className="text-[#0E0E2C]/60 dark:text-white/60 text-[22px] ">
               With Our team knowloadg of different process We Choose the perfect
               process to suit the Development of your Product{" "}
             </p>
@@ -80,19 +80,19 @@ const page = () => {
       {/* part 3 */}
       <div className="w-full lg:h-[435px] flex items-center relative">
         <div className="hidden lg:inline  absolute top-0 left-[30%] ">
-          <Image src={victorUp} alt="victorUp" />
+          <Image src={victorUp} alt="victorUp" className="dark:invert" />
         </div>
         <div className=" w-full grid grid-cols-1 lg:grid-cols-4 justify-between items-center space-y-12 lg:space-y-0 ">
           {/* cart */}
           {cartDescription.map((item, index) => (
             <div key={index} className="lg:w-[250px] space-y-4">
               <h1 className="text-[22px] font-semibold flex gap-4 items-end ">
-                <span className="text-3xl font-bold text-blue-500 ">
+                <span className="text-3xl font-bold text-blue-500 dark:text-white ">
                   {item.number}
                 </span>
                 {item.title}
               </h1>
-              <p className="text-[16px] text-[#0E0E2C]/60 ">
+              <p className="text-[16px] text-[#0E0E2C]/60 dark:text-white/60">
                 {item.description}
               </p>
             </div>
@@ -100,10 +100,10 @@ const page = () => {
         </div>
         {/* images */}
         <div className="hidden lg:inline absolute bottom-0 left-[10%] ">
-          <Image src={victorDown1} alt="victordown" />
+          <Image src={victorDown1} alt="victordown" className="dark:invert" />
         </div>
         <div className="hidden lg:inline absolute bottom-0 right-[20%] ">
-          <Image src={victorDown2} alt="victordown" />
+          <Image src={victorDown2} alt="victordown" className="dark:invert" />
         </div>
       </div>
 

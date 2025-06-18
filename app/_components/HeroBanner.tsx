@@ -37,7 +37,7 @@ const HeroBannner = ({
     <section className="relative">
       <div className="  container grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ">
         <div className="mx-auto flex flex-col items-start text-start md:ml-auto lg:max-w-3xl  lg:text-left">
-          <h4 className="text-[16px] lg:text-[22px] text-blue-500 font-bold ">
+          <h4 className="text-[16px] lg:text-[22px] text-blue-500 dark:text-white font-bold ">
             {welcoming}
           </h4>
           <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl xl:text-7xl">
