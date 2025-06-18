@@ -17,7 +17,7 @@ export default withUt({
   theme: {
   	extend: {
 		backgroundImage: { 
-            backgroundBanner: "url('/images/background.png')"
+            backgroundBanner: "url('/background.png')"
 		},
   		borderRadius: {
   			lg: 'var(--radius)',

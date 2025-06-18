@@ -28,7 +28,7 @@ const ContactPage = () => {
               className="mx-auto flex w-full flex-col gap-8 lg:gap-10 "
             >
               <div className="w-full flex gap-8">
-                <div className="grid w-full text-start gap-1.5 bg-white">
+                <div className="grid w-full text-start gap-1.5">
                   <Label htmlFor="name" className="text-[12px] lg:text-sm font-bold ">
                     Your Name
                   </Label>
@@ -37,37 +37,37 @@ const ContactPage = () => {
                     id="name"
                     name="name"
                     placeholder="Your Name"
-                    className="text-sm lg:text-[16px] font-medium "
+                    className="text-sm lg:text-[16px] font-medium bg-white dark:bg-black/90"
                   />
                    {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.name}</p>)}
                 </div>
               </div>
-              <div className="grid w-full text-start items-center gap-1.5 bg-white">
+              <div className="grid w-full text-start items-center gap-1.5 ">
                 <Label htmlFor="email" className="text-[12px] lg:text-sm font-bold ">Your Email</Label>
                 <Input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Your Email"
-                  className="text-sm lg:text-[16px] font-medium "
+                  className="text-sm lg:text-[16px] font-medium bg-white dark:bg-black/90 "
                 />
                  {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.email}</p>)}
               </div>
-              <div className="grid w-full text-start items-center gap-1.5 bg-white">
+              <div className="grid w-full text-start items-center gap-1.5 ">
                 <Label htmlFor="phone" className="text-[12px] lg:text-sm font-bold ">Your Phone Number</Label>
                 <Input
                   type="text"
                   id="phone"
                   name="phone"
                   placeholder="Your Phone Number"
-                  className="text-sm lg:text-[16px] font-medium "
+                  className="text-sm lg:text-[16px] font-medium bg-white dark:bg-black/90"
                 /> {state?.errors && ( <p className="text-red-500 font-semibold text-[12px] py-2 ">{state.errors.phone}</p>)}
               </div>
-              <div className="grid w-full text-start gap-1.5 bg-white">
+              <div className="grid w-full text-start gap-1.5">
                 <Label htmlFor="message" className="text-[12px] lg:text-sm font-bold ">Messages</Label>
                 <Textarea
                   placeholder="About What do you want to talk?"
-                  className="resize-none h-[200px] text-sm lg:text-[16px] font-medium "
+                  className="resize-none h-[200px] text-sm lg:text-[16px] font-medium bg-white dark:bg-black/90"
                   id="message"
                   name="message"
                  

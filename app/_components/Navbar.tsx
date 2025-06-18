@@ -77,7 +77,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
 
           <div className="flex gap-2">
             {/* Theme Toggle Button */}
-            <ThemeToggleButton/>
+            <ThemeToggleButton />
             {/* sign in / sign up buttons */}
             <SignedOut>
               <button className="px-4 text-[14px] font-bold text-white bg-blue-500 rounded-md transition-colors hover:bg-blue-600">
@@ -101,9 +101,14 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
               {logo.title}
             </Link>
             {/* Mobile Menu Button */}
-            <button onClick={() => setMobileMenu(!mobileMenu)} className="">
-              {mobileMenu ? <FaTimes /> : <CgMenuRightAlt />}
-            </button>
+            <div className="flex items-center gap-2">
+           {/* Theme Toggle Button */}
+                <ThemeToggleButton />
+              {/* menu button */}
+              <button onClick={() => setMobileMenu(!mobileMenu)} className="">
+                {mobileMenu ? <FaTimes /> : <CgMenuRightAlt />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -128,8 +133,6 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
           ))}
 
           <div className="flex gap-2 mt-4 ">
-            {/* Theme Toggle Button */}
-            <ThemeToggleButton/>
             {/* sign in / sign up buttons */}
             <SignedOut>
               <button className="px-4 py-1 text-[14px] font-bold text-white bg-blue-500 rounded transition-colors hover:bg-blue-600">

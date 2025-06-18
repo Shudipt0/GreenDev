@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { SignUp } from "@clerk/nextjs";
+// import im from '../../images/background.png'
 
 export default function SignUpPage() {
   return (
-    <section className="bg-backgroundBanner bg-no-repeat bg-cover w-full h-screen flex items-center justify-center">
+    <section className=" bg-backgroundBanner bg-no-repeat bg-cover w-full h-screen flex items-center justify-center">
       {/* <SignUp.Root>
         <SignUp.Step name="start" className="container">
           <div className="flex flex-col gap-4">
