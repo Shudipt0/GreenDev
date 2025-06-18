@@ -56,7 +56,11 @@ const ServicePageCarousel = () => {
           <div className="absolute hidden lg:top-0 lg:right-0 lg:flex ">
             <Image src={tiktik} alt="tiktik" className="dark:invert" />
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:h-[450px] bg-transparent"> </div>
         </div>
+
+        
 
         {/* page2 */}
         <div className=" w-full h-[450px] flex flex-col lg:flex-row justify-between items-center gap-16 relative ">
@@ -83,6 +87,8 @@ const ServicePageCarousel = () => {
           <div className="absolute hidden lg:top-0 lg:right-0 lg:flex  ">
             <Image src={tiktik} alt="tiktik" />
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:h-[450px] bg-transparent"> </div>
         </div>
       </Carousel>
     </div>

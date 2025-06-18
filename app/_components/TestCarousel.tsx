@@ -34,7 +34,7 @@ const TestCarousel = () => {
       className="w-full "
        >
     
-      <div className=" w-full lg:w-[800px] h-[350px] text-start p-14 ">
+      <div className=" w-full lg:w-[800px] h-[350px] text-start p-14 relative ">
           <p className="text-[16px] lg:text-[22px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -46,8 +46,10 @@ const TestCarousel = () => {
               <p className="text-[16px] text-gray-400">CEO of Company</p>
             </div>
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:w-[800px] h-[350px] bg-transparent z-40 "> </div>
         </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start p-14">
+        <div className="w-full lg:w-[400px] h-[350px] text-start p-14 relative">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -59,10 +61,12 @@ const TestCarousel = () => {
               <p className="text-[16px] text-gray-400">CEO of Company</p>
             </div>
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:w-[800px] h-[350px] bg-transparent z-40 "> </div>
         </div>
     
     
-      <div className=" w-full lg:w-[400px] h-[350px] text-start p-14 ">
+      <div className=" w-full lg:w-[400px] h-[350px] text-start p-14 relative ">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -74,8 +78,10 @@ const TestCarousel = () => {
               <p className="text-[16px] text-gray-400">CEO of Company</p>
             </div>
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:w-[800px] h-[350px] bg-transparent z-40 "> </div>
         </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start p-14">
+        <div className="w-full lg:w-[400px] h-[350px] text-start p-14 relative">
           <p className="text-[16px] text-gray-400 ">
             Our team of digital product creators and Tch Bring Skilled will take
             your idea to the next level and help you with your product
@@ -87,6 +93,8 @@ const TestCarousel = () => {
               <p className="text-[16px] text-gray-400">CEO of Company</p>
             </div>
           </div>
+          {/* Overlay */}
+          <div className="absolute w-full lg:w-[800px] h-[350px] bg-transparent z-40 "> </div>
         </div>
     
         
