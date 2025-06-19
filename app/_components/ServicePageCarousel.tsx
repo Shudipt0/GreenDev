@@ -8,7 +8,7 @@ import tiktik from "@/app/images/Titik.svg";
 import Image from "next/image";
 const ServicePageCarousel = () => {
   return (
-    <div>
+    <div className="w-full relative flex flex-col justify-center items-center">
       <Carousel
         showIndicators={false}
         showStatus={false}
@@ -16,7 +16,7 @@ const ServicePageCarousel = () => {
         renderArrowPrev={(clickHandler, hasPrev) => (
           <div
             onClick={clickHandler}
-            className="absolute bottom-0 left-[32%] lg:left-[75%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-10 flex items-center justify-center cursor-pointer"
+            className="absolute bottom-0 left-[32%] lg:left-[75%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-20 flex items-center justify-center cursor-pointer"
           >
             <IoArrowBackSharp />
           </div>
@@ -24,7 +24,7 @@ const ServicePageCarousel = () => {
         renderArrowNext={(clickHandler, hasNext) => (
           <div
             onClick={clickHandler}
-            className="absolute bottom-0 right-[32%] lg:right-[12%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+            className="absolute bottom-0 right-[32%] lg:right-[12%] h-[48px] w-[48px] text-blue-500 dark:text-white rounded-full border-2 border-blue-500 dark:bg-blue-500 z-20 flex items-center justify-center cursor-pointer hover:opacity-90"
           >
             <IoArrowForwardSharp />
           </div>
@@ -32,7 +32,7 @@ const ServicePageCarousel = () => {
         className="w-full "
       >
         {/* page1 */}
-        <div className=" w-full lg:h-[450px] flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-16 relative ">
+        <div className=" w-full lg:h-[450px] flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-16 ">
           {/* left site */}
           <div className="w-full text-start space-y-5 ">
             <h4 className="text-[16px] lg:text-[22px] text-blue-500 dark:text-white font-semibold ">
@@ -56,14 +56,11 @@ const ServicePageCarousel = () => {
           <div className="absolute hidden lg:top-0 lg:right-0 lg:flex ">
             <Image src={tiktik} alt="tiktik" className="dark:invert" />
           </div>
-          {/* Overlay */}
-          <div className="absolute w-full lg:h-[450px] bg-transparent"> </div>
+         
         </div>
-
-        
-
+ 
         {/* page2 */}
-        <div className=" w-full h-[450px] flex flex-col lg:flex-row justify-between items-center gap-16 relative ">
+        <div className=" w-full h-[450px] flex flex-col lg:flex-row justify-between items-center gap-16  ">
           {/* left site */}
           <div className="w-full text-start space-y-5 ">
             <h4 className="text-[22px] text-blue-500 font-semibold ">
@@ -87,10 +84,11 @@ const ServicePageCarousel = () => {
           <div className="absolute hidden lg:top-0 lg:right-0 lg:flex  ">
             <Image src={tiktik} alt="tiktik" />
           </div>
-          {/* Overlay */}
-          <div className="absolute w-full lg:h-[450px] bg-transparent"> </div>
+         
         </div>
       </Carousel>
+      {/* Overlay */}
+          <div className="absolute w-full lg:h-[450px] bg-transparent z-10"> </div>
     </div>
   );
 };
