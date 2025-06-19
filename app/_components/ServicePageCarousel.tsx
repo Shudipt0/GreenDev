@@ -48,7 +48,7 @@ const ServicePageCarousel = () => {
             </p>
           </div>
           {/* right site */}
-          <div className=" w-full h-[440px] lg:h-[450px] relative flex justify-center z-10 lg:mt-12 lg:ml-16 ">
+          <div className=" w-full h-[440px] lg:h-[450px] relative flex justify-center lg:mt-12 lg:ml-16 ">
             <div className="w-[350px] ">
               <Image src={rectangle} alt="rectangle" />
             </div>
@@ -76,7 +76,7 @@ const ServicePageCarousel = () => {
             </p>
           </div>
           {/* right site */}
-          <div className="w-full relative flex justify-center z-10 -mt-12 ml-16 ">
+          <div className="w-full relative flex justify-center -mt-12 ml-16 ">
             <div className="w-[350px] ">
               <Image src={rectangle} alt="rectangle" />
             </div>

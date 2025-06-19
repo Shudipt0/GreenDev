@@ -17,12 +17,12 @@ const page = () => {
           action={action}
           className="w-full bg-green-100 border rounded-lg flex flex-col gap-4 p-8 "
         >
-          <label htmlFor="categoty">Categoty:</label>
+          <label htmlFor="category">category:</label>
           <input
             type="text"
-            name="categoty"
-            id="categoty"
-            placeholder="Categoty"
+            name="category"
+            id="category"
+            placeholder="category"
             className="outline-none border-2 border-gray-300 bg-white text-[16px] font-semibold px-5 py-1 rounded"
           />
 

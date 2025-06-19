@@ -70,7 +70,7 @@ export const columns: ColumnDef<Projects>[] = [
       <div className="capitalize">
         <Image
           src={row.getValue("image")}
-          alt={row.getValue("serviceName")}
+          alt={row.getValue("image")}
           width={50}
           height={50}
         />

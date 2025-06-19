@@ -1,6 +1,8 @@
 import { ArrowDownRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import heroBanner from '@/app/images/heroBanner.jpg'
+import Image from "next/image";
 
 interface HeroProps {
   welcoming?: string;
@@ -68,10 +70,12 @@ const HeroBannner = ({
           </div>
         </div>
         <div className="hidden md:flex">
-          <img
-            src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
-            alt="placeholder hero"
-            className="max-h-[600px] w-full rounded-md object-cover lg:max-h-[800px]"
+          <Image
+            src={heroBanner}
+            alt="Hero Banner"
+            className="rounded-lg shadow-lg"
+            width={600}
+            height={400}
           />
         </div>
       </div>

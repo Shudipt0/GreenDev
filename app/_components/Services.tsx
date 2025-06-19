@@ -21,7 +21,7 @@ const Services =  () => {
         <div className="cols-span-1 lg:w-60 ">
            <ServiceCard/>
         </div>
-        <div className="cols-span-1 lg:w-60 ">
+        {/* <div className="cols-span-1 lg:w-60 ">
            <ServiceCard/>
         </div>
         <div className="cols-span-1 lg:w-60 ">
@@ -35,7 +35,7 @@ const Services =  () => {
         </div>
         <div className="cols-span-1 lg:w-60 ">
            <ServiceCard/>
-        </div>
+        </div> */}
 
         
       </div>
