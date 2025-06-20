@@ -5,10 +5,21 @@ import { IoArrowBackSharp } from "react-icons/io5";
 import { IoArrowForwardSharp } from "react-icons/io5";
 
 import Image from "next/image";
-import head1 from "@/app/images/head1.svg";
-import head2 from "@/app/images/head2.svg";
 
-const TestCarousel = () => {
+
+interface Expert {
+  id: number;
+  experts_name: string;
+  bio_data: string;
+  thought: string;
+  image: string;
+}
+
+interface TestCarouselProps {
+  experts: Expert[];
+}
+
+const TestCarousel = ({ experts }: TestCarouselProps) => {
   return (
     <div className="relative w-full flex flex-col justify-center items-center ">
       <Carousel
@@ -33,67 +44,33 @@ const TestCarousel = () => {
         )}
         className="w-full "
       >
-        <div className=" w-full lg:w-[800px] h-[350px] text-start p-14 ">
-          <p className="text-[16px] lg:text-[22px] text-gray-400 ">
-            Our team of digital product creators and Tch Bring Skilled will take
-            your idea to the next level and help you with your product
-          </p>
-          <div className="flex items-center space-x-4 mt-4">
-            <div className="w-[68px] h-[68px] ">
-              <Image src={head1} alt="head1" />
-            </div>
-            <div>
-              <h1 className="text-[18px] font-semibold ">John Doe</h1>
-              <p className="text-[16px] text-gray-400">CEO of Company</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start p-14 ">
-          <p className="text-[16px] text-gray-400 ">
-            Our team of digital product creators and Tch Bring Skilled will take
-            your idea to the next level and help you with your product
-          </p>
-          <div className="flex items-center space-x-4 mt-4">
-            <div className="w-[68px] h-[68px] ">
-              <Image src={head2} alt="head2" />
-            </div>
-            <div>
-              <h1 className="text-[18px] font-semibold ">John Doe</h1>
-              <p className="text-[16px] text-gray-400">CEO of Company</p>
+        {experts.map((item) => (
+          <div
+            key={item.id}
+            className=" w-full  h-fit md:h-[350px] text-start py-[75px] "
+          >
+            <p className="text-[16px] lg:text-[22px] text-gray-400 ">
+              {item.thought.split(" ").slice(0, 35).join(" ")}
+            </p>
+            <div className="flex items-center space-x-4 mt-4">
+              <div className="w-[68px] h-[68px] rounded-full overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt="expertsImage"
+                  width={68}
+                  height={68}
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h1 className="text-[18px] font-semibold ">
+                  {item.experts_name}
+                </h1>
+                <p className="text-[16px] text-gray-400">{item.bio_data}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className=" w-full lg:w-[400px] h-[350px] text-start p-14 ">
-          <p className="text-[16px] text-gray-400 ">
-            Our team of digital product creators and Tch Bring Skilled will take
-            your idea to the next level and help you with your product
-          </p>
-          <div className="flex items-center space-x-4 mt-4">
-            <div className="w-[68px] h-[68px] ">
-              <Image src={head1} alt="head1" />
-            </div>
-            <div>
-              <h1 className="text-[18px] font-semibold ">John Doe</h1>
-              <p className="text-[16px] text-gray-400">CEO of Company</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-full lg:w-[400px] h-[350px] text-start p-14 relative">
-          <p className="text-[16px] text-gray-400 ">
-            Our team of digital product creators and Tch Bring Skilled will take
-            your idea to the next level and help you with your product
-          </p>
-          <div className="flex items-center space-x-4 mt-4">
-            <div className="w-[68px] h-[68px] ">
-              <Image src={head2} alt="head2" />
-            </div>
-            <div>
-              <h1 className="text-[18px] font-semibold ">John Doe</h1>
-              <p className="text-[16px] text-gray-400">CEO of Company</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </Carousel>
       {/* Overlay */}
       <div className="absolute w-full h-full bg-transparent z-10 "> </div>
@@ -102,5 +79,3 @@ const TestCarousel = () => {
 };
 
 export default TestCarousel;
-
-

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoArrowForwardSharp } from "react-icons/io5";
+import Testmonial from "../_components/Testmonial";
 
 
 const projectDescription = {
@@ -195,6 +196,8 @@ const page = () => {
               </button>
             </Link>
       </div>
+            {/* Testimonial */}
+      <Testmonial />
     </div>
   );
 };

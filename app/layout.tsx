@@ -55,7 +55,6 @@ export default function RootLayout({
                 <>
                   <Navbar mobileMenu={mobilemenu} setMobileMenu={setMobileMenu} />
                   <div>{children}</div>
-                <Testmonial />
                 <Footer />
                 <SidebarModal
                   mobilemenu={mobilemenu}

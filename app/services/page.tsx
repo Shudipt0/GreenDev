@@ -5,6 +5,8 @@ import victorDown1 from "@/app/images/Vector4.svg";
 import victorDown2 from "@/app/images/Vector4.svg";
 import Image from "next/image";
 import ServicePageCarousel from "../_components/ServicePageCarousel";
+import { prisma } from "@/lib/utils";
+import Testmonial from "../_components/Testmonial";
 
 const serviceDescription = {
   page: "Our Services",
@@ -42,7 +44,9 @@ const cartDescription = [
   },
 ];
 
-const page = () => {
+const page = async () => {
+  // Fetching services from the database can be done here if needed
+  const services = await prisma.service.findMany();
   return (
     <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 flex flex-col items-center ">
       {/* part 1 */}
@@ -110,8 +114,10 @@ const page = () => {
       {/* part 4 */}
 
       <div className="w-full py-28 lg:py-32 ">
-        <ServicePageCarousel />
+        <ServicePageCarousel services={services} />
       </div>
+      {/* Testimonial */}
+      <Testmonial />
     </div>
   );
 };

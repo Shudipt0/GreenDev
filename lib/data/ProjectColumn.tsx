@@ -32,6 +32,7 @@ type Projects = {
   title: string;
   description: string;
   image: string;
+  link: string
 };
 
 export const columns: ColumnDef<Projects>[] = [
@@ -67,15 +68,27 @@ export const columns: ColumnDef<Projects>[] = [
     accessorKey: "image",
     header: "Image",
     cell: ({ row }) => (
-      <div className="capitalize">
+      <div className="">
         <Image
           src={row.getValue("image")}
           alt={row.getValue("image")}
           width={50}
           height={50}
+          className="object-cover w-[50px] h-[50px] rounded"
         />
       </div>
     ),
+  },
+  {
+    accessorKey: "link",
+  header: "Link",
+    cell: ({ row }) => <div className="capitalize text-start">
+        {/* Display only the first three words of the link */}
+        {(row.getValue("link") as string)
+          .split(" ")
+          .slice(0, 3)
+          .join(" ")}
+    </div>,
   },
   
   {

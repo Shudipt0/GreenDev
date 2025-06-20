@@ -22,7 +22,7 @@ const ProjectViewPage = async (props: Props) => {
         <p className='text-lg font-semibold text-black/60 bg-slate-100 px-8 py-3 rounded shadow-sm' >{projects?.title}</p>
         <p className='text-lg font-semibold text-black/60 bg-slate-100 px-8 py-3 rounded shadow-sm' >{projects?.description}</p>
         {projects?.image && (
-          <div className='w-[300px] bg-slate-100 p-5 rounded shadow-sm'><Image src={projects?.image} alt="image" width={300} height={200} /></div>
+          <div className='w-[300px] bg-slate-100 p-5 rounded shadow-sm'><Image src={projects?.image} alt="image" width={300} height={200} className='object-cover w-[300px] h-[200px] ' /></div>
         )}
       </div>
     </div>

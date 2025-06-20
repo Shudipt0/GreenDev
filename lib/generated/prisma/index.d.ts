@@ -1258,6 +1258,7 @@ export namespace Prisma {
     serviceName: string | null
     description: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type ServiceMaxAggregateOutputType = {
@@ -1265,6 +1266,7 @@ export namespace Prisma {
     serviceName: string | null
     description: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type ServiceCountAggregateOutputType = {
@@ -1272,6 +1274,7 @@ export namespace Prisma {
     serviceName: number
     description: number
     image: number
+    createdAt: number
     _all: number
   }
 
@@ -1289,6 +1292,7 @@ export namespace Prisma {
     serviceName?: true
     description?: true
     image?: true
+    createdAt?: true
   }
 
   export type ServiceMaxAggregateInputType = {
@@ -1296,6 +1300,7 @@ export namespace Prisma {
     serviceName?: true
     description?: true
     image?: true
+    createdAt?: true
   }
 
   export type ServiceCountAggregateInputType = {
@@ -1303,6 +1308,7 @@ export namespace Prisma {
     serviceName?: true
     description?: true
     image?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -1397,6 +1403,7 @@ export namespace Prisma {
     serviceName: string
     description: string
     image: string
+    createdAt: Date
     _count: ServiceCountAggregateOutputType | null
     _avg: ServiceAvgAggregateOutputType | null
     _sum: ServiceSumAggregateOutputType | null
@@ -1423,6 +1430,7 @@ export namespace Prisma {
     serviceName?: boolean
     description?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["service"]>
 
   export type ServiceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1430,6 +1438,7 @@ export namespace Prisma {
     serviceName?: boolean
     description?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["service"]>
 
   export type ServiceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1437,6 +1446,7 @@ export namespace Prisma {
     serviceName?: boolean
     description?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["service"]>
 
   export type ServiceSelectScalar = {
@@ -1444,9 +1454,10 @@ export namespace Prisma {
     serviceName?: boolean
     description?: boolean
     image?: boolean
+    createdAt?: boolean
   }
 
-  export type ServiceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "serviceName" | "description" | "image", ExtArgs["result"]["service"]>
+  export type ServiceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "serviceName" | "description" | "image" | "createdAt", ExtArgs["result"]["service"]>
 
   export type $ServicePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Service"
@@ -1456,6 +1467,7 @@ export namespace Prisma {
       serviceName: string
       description: string
       image: string
+      createdAt: Date
     }, ExtArgs["result"]["service"]>
     composites: {}
   }
@@ -1883,6 +1895,7 @@ export namespace Prisma {
     readonly serviceName: FieldRef<"Service", 'String'>
     readonly description: FieldRef<"Service", 'String'>
     readonly image: FieldRef<"Service", 'String'>
+    readonly createdAt: FieldRef<"Service", 'DateTime'>
   }
     
 
@@ -2275,6 +2288,7 @@ export namespace Prisma {
     profession: string | null
     bio_data: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type TeamMaxAggregateOutputType = {
@@ -2283,6 +2297,7 @@ export namespace Prisma {
     profession: string | null
     bio_data: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type TeamCountAggregateOutputType = {
@@ -2291,6 +2306,7 @@ export namespace Prisma {
     profession: number
     bio_data: number
     image: number
+    createdAt: number
     _all: number
   }
 
@@ -2309,6 +2325,7 @@ export namespace Prisma {
     profession?: true
     bio_data?: true
     image?: true
+    createdAt?: true
   }
 
   export type TeamMaxAggregateInputType = {
@@ -2317,6 +2334,7 @@ export namespace Prisma {
     profession?: true
     bio_data?: true
     image?: true
+    createdAt?: true
   }
 
   export type TeamCountAggregateInputType = {
@@ -2325,6 +2343,7 @@ export namespace Prisma {
     profession?: true
     bio_data?: true
     image?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -2420,6 +2439,7 @@ export namespace Prisma {
     profession: string
     bio_data: string
     image: string
+    createdAt: Date
     _count: TeamCountAggregateOutputType | null
     _avg: TeamAvgAggregateOutputType | null
     _sum: TeamSumAggregateOutputType | null
@@ -2447,6 +2467,7 @@ export namespace Prisma {
     profession?: boolean
     bio_data?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["team"]>
 
   export type TeamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2455,6 +2476,7 @@ export namespace Prisma {
     profession?: boolean
     bio_data?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["team"]>
 
   export type TeamSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2463,6 +2485,7 @@ export namespace Prisma {
     profession?: boolean
     bio_data?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["team"]>
 
   export type TeamSelectScalar = {
@@ -2471,9 +2494,10 @@ export namespace Prisma {
     profession?: boolean
     bio_data?: boolean
     image?: boolean
+    createdAt?: boolean
   }
 
-  export type TeamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "profession" | "bio_data" | "image", ExtArgs["result"]["team"]>
+  export type TeamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "profession" | "bio_data" | "image" | "createdAt", ExtArgs["result"]["team"]>
 
   export type $TeamPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Team"
@@ -2484,6 +2508,7 @@ export namespace Prisma {
       profession: string
       bio_data: string
       image: string
+      createdAt: Date
     }, ExtArgs["result"]["team"]>
     composites: {}
   }
@@ -2912,6 +2937,7 @@ export namespace Prisma {
     readonly profession: FieldRef<"Team", 'String'>
     readonly bio_data: FieldRef<"Team", 'String'>
     readonly image: FieldRef<"Team", 'String'>
+    readonly createdAt: FieldRef<"Team", 'DateTime'>
   }
     
 
@@ -3304,6 +3330,8 @@ export namespace Prisma {
     title: string | null
     description: string | null
     image: string | null
+    link: string | null
+    createdAt: Date | null
   }
 
   export type ProjectMaxAggregateOutputType = {
@@ -3312,6 +3340,8 @@ export namespace Prisma {
     title: string | null
     description: string | null
     image: string | null
+    link: string | null
+    createdAt: Date | null
   }
 
   export type ProjectCountAggregateOutputType = {
@@ -3320,6 +3350,8 @@ export namespace Prisma {
     title: number
     description: number
     image: number
+    link: number
+    createdAt: number
     _all: number
   }
 
@@ -3338,6 +3370,8 @@ export namespace Prisma {
     title?: true
     description?: true
     image?: true
+    link?: true
+    createdAt?: true
   }
 
   export type ProjectMaxAggregateInputType = {
@@ -3346,6 +3380,8 @@ export namespace Prisma {
     title?: true
     description?: true
     image?: true
+    link?: true
+    createdAt?: true
   }
 
   export type ProjectCountAggregateInputType = {
@@ -3354,6 +3390,8 @@ export namespace Prisma {
     title?: true
     description?: true
     image?: true
+    link?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -3449,6 +3487,8 @@ export namespace Prisma {
     title: string
     description: string
     image: string
+    link: string
+    createdAt: Date
     _count: ProjectCountAggregateOutputType | null
     _avg: ProjectAvgAggregateOutputType | null
     _sum: ProjectSumAggregateOutputType | null
@@ -3476,6 +3516,8 @@ export namespace Prisma {
     title?: boolean
     description?: boolean
     image?: boolean
+    link?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["project"]>
 
   export type ProjectSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3484,6 +3526,8 @@ export namespace Prisma {
     title?: boolean
     description?: boolean
     image?: boolean
+    link?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["project"]>
 
   export type ProjectSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3492,6 +3536,8 @@ export namespace Prisma {
     title?: boolean
     description?: boolean
     image?: boolean
+    link?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["project"]>
 
   export type ProjectSelectScalar = {
@@ -3500,9 +3546,11 @@ export namespace Prisma {
     title?: boolean
     description?: boolean
     image?: boolean
+    link?: boolean
+    createdAt?: boolean
   }
 
-  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "title" | "description" | "image", ExtArgs["result"]["project"]>
+  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "category" | "title" | "description" | "image" | "link" | "createdAt", ExtArgs["result"]["project"]>
 
   export type $ProjectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Project"
@@ -3513,6 +3561,8 @@ export namespace Prisma {
       title: string
       description: string
       image: string
+      link: string
+      createdAt: Date
     }, ExtArgs["result"]["project"]>
     composites: {}
   }
@@ -3941,6 +3991,8 @@ export namespace Prisma {
     readonly title: FieldRef<"Project", 'String'>
     readonly description: FieldRef<"Project", 'String'>
     readonly image: FieldRef<"Project", 'String'>
+    readonly link: FieldRef<"Project", 'String'>
+    readonly createdAt: FieldRef<"Project", 'DateTime'>
   }
     
 
@@ -4333,6 +4385,7 @@ export namespace Prisma {
     bio_data: string | null
     thought: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type ThoughtMaxAggregateOutputType = {
@@ -4341,6 +4394,7 @@ export namespace Prisma {
     bio_data: string | null
     thought: string | null
     image: string | null
+    createdAt: Date | null
   }
 
   export type ThoughtCountAggregateOutputType = {
@@ -4349,6 +4403,7 @@ export namespace Prisma {
     bio_data: number
     thought: number
     image: number
+    createdAt: number
     _all: number
   }
 
@@ -4367,6 +4422,7 @@ export namespace Prisma {
     bio_data?: true
     thought?: true
     image?: true
+    createdAt?: true
   }
 
   export type ThoughtMaxAggregateInputType = {
@@ -4375,6 +4431,7 @@ export namespace Prisma {
     bio_data?: true
     thought?: true
     image?: true
+    createdAt?: true
   }
 
   export type ThoughtCountAggregateInputType = {
@@ -4383,6 +4440,7 @@ export namespace Prisma {
     bio_data?: true
     thought?: true
     image?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -4478,6 +4536,7 @@ export namespace Prisma {
     bio_data: string
     thought: string
     image: string
+    createdAt: Date
     _count: ThoughtCountAggregateOutputType | null
     _avg: ThoughtAvgAggregateOutputType | null
     _sum: ThoughtSumAggregateOutputType | null
@@ -4505,6 +4564,7 @@ export namespace Prisma {
     bio_data?: boolean
     thought?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["thought"]>
 
   export type ThoughtSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4513,6 +4573,7 @@ export namespace Prisma {
     bio_data?: boolean
     thought?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["thought"]>
 
   export type ThoughtSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4521,6 +4582,7 @@ export namespace Prisma {
     bio_data?: boolean
     thought?: boolean
     image?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["thought"]>
 
   export type ThoughtSelectScalar = {
@@ -4529,9 +4591,10 @@ export namespace Prisma {
     bio_data?: boolean
     thought?: boolean
     image?: boolean
+    createdAt?: boolean
   }
 
-  export type ThoughtOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "experts_name" | "bio_data" | "thought" | "image", ExtArgs["result"]["thought"]>
+  export type ThoughtOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "experts_name" | "bio_data" | "thought" | "image" | "createdAt", ExtArgs["result"]["thought"]>
 
   export type $ThoughtPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Thought"
@@ -4542,6 +4605,7 @@ export namespace Prisma {
       bio_data: string
       thought: string
       image: string
+      createdAt: Date
     }, ExtArgs["result"]["thought"]>
     composites: {}
   }
@@ -4970,6 +5034,7 @@ export namespace Prisma {
     readonly bio_data: FieldRef<"Thought", 'String'>
     readonly thought: FieldRef<"Thought", 'String'>
     readonly image: FieldRef<"Thought", 'String'>
+    readonly createdAt: FieldRef<"Thought", 'DateTime'>
   }
     
 
@@ -6396,7 +6461,8 @@ export namespace Prisma {
     id: 'id',
     serviceName: 'serviceName',
     description: 'description',
-    image: 'image'
+    image: 'image',
+    createdAt: 'createdAt'
   };
 
   export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
@@ -6407,7 +6473,8 @@ export namespace Prisma {
     name: 'name',
     profession: 'profession',
     bio_data: 'bio_data',
-    image: 'image'
+    image: 'image',
+    createdAt: 'createdAt'
   };
 
   export type TeamScalarFieldEnum = (typeof TeamScalarFieldEnum)[keyof typeof TeamScalarFieldEnum]
@@ -6418,7 +6485,9 @@ export namespace Prisma {
     category: 'category',
     title: 'title',
     description: 'description',
-    image: 'image'
+    image: 'image',
+    link: 'link',
+    createdAt: 'createdAt'
   };
 
   export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
@@ -6429,7 +6498,8 @@ export namespace Prisma {
     experts_name: 'experts_name',
     bio_data: 'bio_data',
     thought: 'thought',
-    image: 'image'
+    image: 'image',
+    createdAt: 'createdAt'
   };
 
   export type ThoughtScalarFieldEnum = (typeof ThoughtScalarFieldEnum)[keyof typeof ThoughtScalarFieldEnum]
@@ -6535,6 +6605,7 @@ export namespace Prisma {
     serviceName?: StringFilter<"Service"> | string
     description?: StringFilter<"Service"> | string
     image?: StringFilter<"Service"> | string
+    createdAt?: DateTimeFilter<"Service"> | Date | string
   }
 
   export type ServiceOrderByWithRelationInput = {
@@ -6542,6 +6613,7 @@ export namespace Prisma {
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ServiceWhereUniqueInput = Prisma.AtLeast<{
@@ -6552,6 +6624,7 @@ export namespace Prisma {
     serviceName?: StringFilter<"Service"> | string
     description?: StringFilter<"Service"> | string
     image?: StringFilter<"Service"> | string
+    createdAt?: DateTimeFilter<"Service"> | Date | string
   }, "id">
 
   export type ServiceOrderByWithAggregationInput = {
@@ -6559,6 +6632,7 @@ export namespace Prisma {
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
     _count?: ServiceCountOrderByAggregateInput
     _avg?: ServiceAvgOrderByAggregateInput
     _max?: ServiceMaxOrderByAggregateInput
@@ -6574,6 +6648,7 @@ export namespace Prisma {
     serviceName?: StringWithAggregatesFilter<"Service"> | string
     description?: StringWithAggregatesFilter<"Service"> | string
     image?: StringWithAggregatesFilter<"Service"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Service"> | Date | string
   }
 
   export type TeamWhereInput = {
@@ -6585,6 +6660,7 @@ export namespace Prisma {
     profession?: StringFilter<"Team"> | string
     bio_data?: StringFilter<"Team"> | string
     image?: StringFilter<"Team"> | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
   }
 
   export type TeamOrderByWithRelationInput = {
@@ -6593,6 +6669,7 @@ export namespace Prisma {
     profession?: SortOrder
     bio_data?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type TeamWhereUniqueInput = Prisma.AtLeast<{
@@ -6604,6 +6681,7 @@ export namespace Prisma {
     profession?: StringFilter<"Team"> | string
     bio_data?: StringFilter<"Team"> | string
     image?: StringFilter<"Team"> | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
   }, "id">
 
   export type TeamOrderByWithAggregationInput = {
@@ -6612,6 +6690,7 @@ export namespace Prisma {
     profession?: SortOrder
     bio_data?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
     _count?: TeamCountOrderByAggregateInput
     _avg?: TeamAvgOrderByAggregateInput
     _max?: TeamMaxOrderByAggregateInput
@@ -6628,6 +6707,7 @@ export namespace Prisma {
     profession?: StringWithAggregatesFilter<"Team"> | string
     bio_data?: StringWithAggregatesFilter<"Team"> | string
     image?: StringWithAggregatesFilter<"Team"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
   }
 
   export type ProjectWhereInput = {
@@ -6639,6 +6719,8 @@ export namespace Prisma {
     title?: StringFilter<"Project"> | string
     description?: StringFilter<"Project"> | string
     image?: StringFilter<"Project"> | string
+    link?: StringFilter<"Project"> | string
+    createdAt?: DateTimeFilter<"Project"> | Date | string
   }
 
   export type ProjectOrderByWithRelationInput = {
@@ -6647,6 +6729,8 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    link?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProjectWhereUniqueInput = Prisma.AtLeast<{
@@ -6658,6 +6742,8 @@ export namespace Prisma {
     title?: StringFilter<"Project"> | string
     description?: StringFilter<"Project"> | string
     image?: StringFilter<"Project"> | string
+    link?: StringFilter<"Project"> | string
+    createdAt?: DateTimeFilter<"Project"> | Date | string
   }, "id">
 
   export type ProjectOrderByWithAggregationInput = {
@@ -6666,6 +6752,8 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    link?: SortOrder
+    createdAt?: SortOrder
     _count?: ProjectCountOrderByAggregateInput
     _avg?: ProjectAvgOrderByAggregateInput
     _max?: ProjectMaxOrderByAggregateInput
@@ -6682,6 +6770,8 @@ export namespace Prisma {
     title?: StringWithAggregatesFilter<"Project"> | string
     description?: StringWithAggregatesFilter<"Project"> | string
     image?: StringWithAggregatesFilter<"Project"> | string
+    link?: StringWithAggregatesFilter<"Project"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Project"> | Date | string
   }
 
   export type ThoughtWhereInput = {
@@ -6693,6 +6783,7 @@ export namespace Prisma {
     bio_data?: StringFilter<"Thought"> | string
     thought?: StringFilter<"Thought"> | string
     image?: StringFilter<"Thought"> | string
+    createdAt?: DateTimeFilter<"Thought"> | Date | string
   }
 
   export type ThoughtOrderByWithRelationInput = {
@@ -6701,6 +6792,7 @@ export namespace Prisma {
     bio_data?: SortOrder
     thought?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ThoughtWhereUniqueInput = Prisma.AtLeast<{
@@ -6712,6 +6804,7 @@ export namespace Prisma {
     bio_data?: StringFilter<"Thought"> | string
     thought?: StringFilter<"Thought"> | string
     image?: StringFilter<"Thought"> | string
+    createdAt?: DateTimeFilter<"Thought"> | Date | string
   }, "id">
 
   export type ThoughtOrderByWithAggregationInput = {
@@ -6720,6 +6813,7 @@ export namespace Prisma {
     bio_data?: SortOrder
     thought?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
     _count?: ThoughtCountOrderByAggregateInput
     _avg?: ThoughtAvgOrderByAggregateInput
     _max?: ThoughtMaxOrderByAggregateInput
@@ -6736,6 +6830,7 @@ export namespace Prisma {
     bio_data?: StringWithAggregatesFilter<"Thought"> | string
     thought?: StringWithAggregatesFilter<"Thought"> | string
     image?: StringWithAggregatesFilter<"Thought"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Thought"> | Date | string
   }
 
   export type ContactWhereInput = {
@@ -6801,6 +6896,7 @@ export namespace Prisma {
     serviceName: string
     description: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ServiceUncheckedCreateInput = {
@@ -6808,12 +6904,14 @@ export namespace Prisma {
     serviceName: string
     description: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ServiceUpdateInput = {
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ServiceUncheckedUpdateInput = {
@@ -6821,6 +6919,7 @@ export namespace Prisma {
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ServiceCreateManyInput = {
@@ -6828,12 +6927,14 @@ export namespace Prisma {
     serviceName: string
     description: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ServiceUpdateManyMutationInput = {
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ServiceUncheckedUpdateManyInput = {
@@ -6841,6 +6942,7 @@ export namespace Prisma {
     serviceName?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TeamCreateInput = {
@@ -6848,6 +6950,7 @@ export namespace Prisma {
     profession: string
     bio_data: string
     image: string
+    createdAt?: Date | string
   }
 
   export type TeamUncheckedCreateInput = {
@@ -6856,6 +6959,7 @@ export namespace Prisma {
     profession: string
     bio_data: string
     image: string
+    createdAt?: Date | string
   }
 
   export type TeamUpdateInput = {
@@ -6863,6 +6967,7 @@ export namespace Prisma {
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TeamUncheckedUpdateInput = {
@@ -6871,6 +6976,7 @@ export namespace Prisma {
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TeamCreateManyInput = {
@@ -6879,6 +6985,7 @@ export namespace Prisma {
     profession: string
     bio_data: string
     image: string
+    createdAt?: Date | string
   }
 
   export type TeamUpdateManyMutationInput = {
@@ -6886,6 +6993,7 @@ export namespace Prisma {
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TeamUncheckedUpdateManyInput = {
@@ -6894,6 +7002,7 @@ export namespace Prisma {
     profession?: StringFieldUpdateOperationsInput | string
     bio_data?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProjectCreateInput = {
@@ -6901,6 +7010,8 @@ export namespace Prisma {
     title: string
     description: string
     image: string
+    link: string
+    createdAt?: Date | string
   }
 
   export type ProjectUncheckedCreateInput = {
@@ -6909,6 +7020,8 @@ export namespace Prisma {
     title: string
     description: string
     image: string
+    link: string
+    createdAt?: Date | string
   }
 
   export type ProjectUpdateInput = {
@@ -6916,6 +7029,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProjectUncheckedUpdateInput = {
@@ -6924,6 +7039,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProjectCreateManyInput = {
@@ -6932,6 +7049,8 @@ export namespace Prisma {
     title: string
     description: string
     image: string
+    link: string
+    createdAt?: Date | string
   }
 
   export type ProjectUpdateManyMutationInput = {
@@ -6939,6 +7058,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProjectUncheckedUpdateManyInput = {
@@ -6947,6 +7068,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ThoughtCreateInput = {
@@ -6954,6 +7077,7 @@ export namespace Prisma {
     bio_data: string
     thought: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ThoughtUncheckedCreateInput = {
@@ -6962,6 +7086,7 @@ export namespace Prisma {
     bio_data: string
     thought: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ThoughtUpdateInput = {
@@ -6969,6 +7094,7 @@ export namespace Prisma {
     bio_data?: StringFieldUpdateOperationsInput | string
     thought?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ThoughtUncheckedUpdateInput = {
@@ -6977,6 +7103,7 @@ export namespace Prisma {
     bio_data?: StringFieldUpdateOperationsInput | string
     thought?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ThoughtCreateManyInput = {
@@ -6985,6 +7112,7 @@ export namespace Prisma {
     bio_data: string
     thought: string
     image: string
+    createdAt?: Date | string
   }
 
   export type ThoughtUpdateManyMutationInput = {
@@ -6992,6 +7120,7 @@ export namespace Prisma {
     bio_data?: StringFieldUpdateOperationsInput | string
     thought?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ThoughtUncheckedUpdateManyInput = {
@@ -7000,6 +7129,7 @@ export namespace Prisma {
     bio_data?: StringFieldUpdateOperationsInput | string
     thought?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ContactCreateInput = {
@@ -7088,11 +7218,23 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type ServiceCountOrderByAggregateInput = {
     id?: SortOrder
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ServiceAvgOrderByAggregateInput = {
@@ -7104,6 +7246,7 @@ export namespace Prisma {
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ServiceMinOrderByAggregateInput = {
@@ -7111,6 +7254,7 @@ export namespace Prisma {
     serviceName?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ServiceSumOrderByAggregateInput = {
@@ -7151,12 +7295,27 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type TeamCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     profession?: SortOrder
     bio_data?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type TeamAvgOrderByAggregateInput = {
@@ -7169,6 +7328,7 @@ export namespace Prisma {
     profession?: SortOrder
     bio_data?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type TeamMinOrderByAggregateInput = {
@@ -7177,6 +7337,7 @@ export namespace Prisma {
     profession?: SortOrder
     bio_data?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type TeamSumOrderByAggregateInput = {
@@ -7189,6 +7350,8 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    link?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProjectAvgOrderByAggregateInput = {
@@ -7201,6 +7364,8 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    link?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProjectMinOrderByAggregateInput = {
@@ -7209,6 +7374,8 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     image?: SortOrder
+    link?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ProjectSumOrderByAggregateInput = {
@@ -7221,6 +7388,7 @@ export namespace Prisma {
     bio_data?: SortOrder
     thought?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ThoughtAvgOrderByAggregateInput = {
@@ -7233,6 +7401,7 @@ export namespace Prisma {
     bio_data?: SortOrder
     thought?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ThoughtMinOrderByAggregateInput = {
@@ -7241,21 +7410,11 @@ export namespace Prisma {
     bio_data?: SortOrder
     thought?: SortOrder
     image?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type ThoughtSumOrderByAggregateInput = {
     id?: SortOrder
-  }
-
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type ContactCountOrderByAggregateInput = {
@@ -7293,22 +7452,12 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -7317,10 +7466,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -7346,6 +7491,17 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -7390,17 +7546,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

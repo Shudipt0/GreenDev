@@ -26,7 +26,7 @@ const data = {
       items: [
         {
           title: "About Company",
-          url: "#",
+          url: "/admin",
         },
         {
           title: "Users",

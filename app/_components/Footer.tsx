@@ -9,8 +9,7 @@ interface MenuItem {
 interface Footer2Props {
   logo?: {
     url: string;
-    src: string;
-    alt: string;
+
     title: string;
   };
   tagline?: string;
@@ -24,12 +23,10 @@ interface Footer2Props {
 
 const Footer = ({
   logo = {
-    src: "https://shadcnblocks.com/images/block/block-1.svg",
-    alt: "blocks for shadcn/ui",
-    title: "Shadcnblocks.com",
+    title: "GreenDev",
     url: "https://www.shadcnblocks.com",
   },
-  tagline = "Components made easy.",
+  tagline = "Life makes easy.",
   menuItems = [
     {
       title: "Product",
@@ -39,7 +36,6 @@ const Footer = ({
         { text: "Marketplace", url: "#" },
         { text: "Features", url: "#" },
         { text: "Integrations", url: "#" },
-        { text: "Pricing", url: "#" },
       ],
     },
     {
@@ -47,8 +43,8 @@ const Footer = ({
       links: [
         { text: "About", url: "#" },
         { text: "Team", url: "#" },
-        { text: "Blog", url: "#" },
-        { text: "Careers", url: "#" },
+        { text: "Projects", url: "#" },
+        { text: "Services", url: "#" },
         { text: "Contact", url: "#" },
         { text: "Privacy", url: "#" },
       ],
@@ -57,7 +53,6 @@ const Footer = ({
       title: "Resources",
       links: [
         { text: "Help", url: "#" },
-        { text: "Sales", url: "#" },
         { text: "Advertise", url: "#" },
       ],
     },
@@ -70,7 +65,7 @@ const Footer = ({
       ],
     },
   ],
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = "© 2024 greendev10@gmail.com. All rights reserved.",
   bottomLinks = [
     { text: "Terms and Conditions", url: "#" },
     { text: "Privacy Policy", url: "#" },
@@ -83,14 +78,6 @@ const Footer = ({
           <div className=" grid grid-cols-2 gap-8 lg:grid-cols-6 px-6 lg:px-28 py-10 lg:pt-14 lg:pb-8 bg-[#A0A4AB]/10 dark:bg-[#0A0A0A]">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center gap-2 lg:justify-start">
-                <a href="https://shadcnblocks.com">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    title={logo.title}
-                    className="h-10"
-                  />
-                </a>
                 <p className="text-xl font-semibold">{logo.title}</p>
               </div>
               <p className="mt-4 font-bold">{tagline}</p>

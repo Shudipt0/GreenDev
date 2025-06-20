@@ -19,6 +19,8 @@ model Service {
   serviceName    String
   description    String
   image          String
+  createdAt      DateTime @default(now())
+
 }
 
 model Team {
@@ -27,6 +29,8 @@ model Team {
   profession     String
   bio_data       String
   image          String
+  createdAt      DateTime @default(now())
+
 }
 
 model Project {
@@ -35,6 +39,8 @@ model Project {
   title          String
   description    String
   image          String
+  link           String
+  createdAt      DateTime @default(now())
 }
 
 model Thought {
@@ -43,6 +49,8 @@ model Thought {
   bio_data       String
   thought        String
   image          String
+  createdAt      DateTime @default(now())
+
 }
 
 model Contact {
