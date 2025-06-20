@@ -21,6 +21,7 @@ type Props = {
           id={projects.id.toString()}
           category={projects.category}
           title={projects.title}
+          link={projects.link}
           description={projects.description}
           image={projects.image}
         />

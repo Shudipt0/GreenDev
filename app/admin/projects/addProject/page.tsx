@@ -35,6 +35,15 @@ const page = () => {
             placeholder="Title"
             className="outline-none border-2 border-gray-300 bg-white text-[16px] font-semibold px-5 py-1 rounded"
           />
+          <label htmlFor="link">Project Link:</label>
+
+          <input
+            type="text"
+            name="link"
+            id="link"
+            placeholder="Project Link"
+            className="outline-none border-2 border-gray-300 bg-white text-[16px] font-semibold px-5 py-1 rounded"
+          />
           <label htmlFor="description">Description:</label>
           <textarea
             

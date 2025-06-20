@@ -8,6 +8,7 @@ interface Projects {
   id: string;
   category: string;
   title: string;
+  link: string;
   description: string;
   image: string;
 }
@@ -45,6 +46,14 @@ const ProjectUpdateFormPage = (projects: Projects) => {
             name="title"
             id="title"
             defaultValue={projects?.title}
+            className="outline-none border-2 border-gray-300 bg-white text-[16px] font-semibold px-5 py-1 rounded"
+          />
+          <label htmlFor="link">Project Link:</label>
+          <input
+            type="text"
+            name="link"
+            id="link"
+            defaultValue={projects?.link}
             className="outline-none border-2 border-gray-300 bg-white text-[16px] font-semibold px-5 py-1 rounded"
           />
           <label htmlFor="description">Description:</label>

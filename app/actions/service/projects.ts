@@ -16,6 +16,7 @@ export const upDateProject = async (data: FormData) => {
       title: (data.get("title") ?? "") as string,
       description: (data.get("description") ?? "") as string,
       image: (data.get("image") ?? "") as string,
+      link: (data.get("link") ?? "") as string,
     },
   });
 
@@ -30,6 +31,7 @@ export const addProject = async (prevState: any, data: FormData) => {
   const title = data.get("title");
   const description = data.get("description");
   const image = data.get("image");
+  const link = data.get("link");
 
   if (!category || !title || !description || !image) {
     throw new Error("Missing fields");
@@ -41,6 +43,7 @@ export const addProject = async (prevState: any, data: FormData) => {
       title: (data.get("title") ?? "") as string,
       description: (data.get("description") ?? "") as string,
       image: (data.get("image") ?? "") as string,
+      link: (data.get("link") ?? "") as string,
     },
   });
 
