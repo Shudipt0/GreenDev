@@ -18,8 +18,10 @@ interface ServicePageCarouselProps {
 }
 
 const ServicePageCarousel = ({ services }: ServicePageCarouselProps) => {
+  if (!services || services.length === 0) return null;
   return (
     <div className="w-full relative flex flex-col justify-center items-center">
+      
       <Carousel
         showIndicators={false}
         showStatus={false}

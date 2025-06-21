@@ -4,9 +4,14 @@ import victorUp from "@/app/images/Vector3.svg";
 import victorDown1 from "@/app/images/Vector4.svg";
 import victorDown2 from "@/app/images/Vector4.svg";
 import Image from "next/image";
-import ServicePageCarousel from "../_components/ServicePageCarousel";
+// import ServicePageCarousel from "../_components/ServicePageCarousel";
 import { prisma } from "@/lib/utils";
 import Testmonial from "../_components/Testmonial";
+import dynamic from "next/dynamic";
+
+const ServicePageCarousel = dynamic(() => import("../_components/ServicePageCarousel"), {
+  ssr: false,
+});
 
 const serviceDescription = {
   page: "Our Services",
@@ -47,6 +52,7 @@ const cartDescription = [
 const page = async () => {
   // Fetching services from the database can be done here if needed
   const services = await prisma.service.findMany();
+  // console.log("services lenght", services.length);
   return (
     <div className="w-full container mx-auto px-6 lg:px-28 mt-20 lg:mt-32 flex flex-col items-center ">
       {/* part 1 */}
