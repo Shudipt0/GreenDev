@@ -3,6 +3,7 @@ import { columns } from "@/lib/data/UserContactColumn";
 
 import { prisma } from "@/lib/utils";
 import React from "react";
+export const dynamic = "force-dynamic";
 
 const UserContactPage = async () => {
   const userContact = await prisma.contact.findMany();

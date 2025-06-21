@@ -4,6 +4,7 @@ import image2 from "@/app/images/project2.svg";
 import image3 from "@/app/images/project4.svg";
 import ProjectShowcaseCart from "../_components/ProjectShowcaseCart";
 import { prisma } from "@/lib/utils";
+export const dynamic = "force-dynamic";
 
 // const ShowcaseItem = [
 //   {

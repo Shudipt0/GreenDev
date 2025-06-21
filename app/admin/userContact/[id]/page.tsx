@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/utils';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+export const dynamic = "force-dynamic";
 
 type Props = {
     params: Promise<{id: string}>
