@@ -7,11 +7,10 @@ import Image from "next/image";
 // import ServicePageCarousel from "../_components/ServicePageCarousel";
 import { prisma } from "@/lib/utils";
 import Testmonial from "../_components/Testmonial";
-import dynamic from "next/dynamic";
+import ServicePageCarouselWrapper from "../_components/ServicePageCarouselWrapper";
 
-const ServicePageCarousel = dynamic(() => import("../_components/ServicePageCarousel"), {
-  ssr: false,
-});
+
+
 
 const serviceDescription = {
   page: "Our Services",
@@ -120,7 +119,8 @@ const page = async () => {
       {/* part 4 */}
 
       <div className="w-full py-28 lg:py-32 ">
-        <ServicePageCarousel services={services} />
+        {/* <ServicePageCarousel services={services} /> */}
+        <ServicePageCarouselWrapper services={services}/>
       </div>
       {/* Testimonial */}
       <Testmonial />
