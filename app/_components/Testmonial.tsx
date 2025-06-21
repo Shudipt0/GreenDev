@@ -1,6 +1,7 @@
 import React from 'react'
-import TestCarousel from './TestCarousel'
+// import TestCarousel from './TestCarousel'
 import { prisma } from '@/lib/utils'
+import TestimonialCarouselWrapper from './TestimonialCarouselWrapper';
 
 const Testmonial = async () => {
   // Fetching the thoughts from the database
@@ -17,7 +18,8 @@ const Testmonial = async () => {
       </div>
       {/* carousel */}
       <div className='w-full '>
-          <TestCarousel experts={experts} />
+          {/* <TestCarousel experts={experts} /> */}
+          <TestimonialCarouselWrapper experts={experts} />
       </div>
       
     </section>
