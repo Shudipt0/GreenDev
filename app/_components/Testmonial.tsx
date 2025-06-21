@@ -2,6 +2,8 @@ import React from 'react'
 // import TestCarousel from './TestCarousel'
 import { prisma } from '@/lib/utils'
 import TestimonialCarouselWrapper from './TestimonialCarouselWrapper';
+export const dynamic = "force-dynamic";
+
 
 const Testmonial = async () => {
   // Fetching the thoughts from the database

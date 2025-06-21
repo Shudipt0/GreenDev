@@ -8,6 +8,7 @@ import Image from "next/image";
 import { prisma } from "@/lib/utils";
 import Testmonial from "../_components/Testmonial";
 import ServicePageCarouselWrapper from "../_components/ServicePageCarouselWrapper";
+export const dynamic = "force-dynamic";
 
 
 

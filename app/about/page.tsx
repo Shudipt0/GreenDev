@@ -3,6 +3,7 @@ import Common from "../_components/Common";
 import { AboutPageCarousel } from "../_components/AboutPageCarousel";
 import { prisma } from "@/lib/utils";
 import Testmonial from "../_components/Testmonial";
+export const dynamic = "force-dynamic";
 
 const aboutDescription = {
   page: "About Us",
