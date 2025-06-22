@@ -5,6 +5,7 @@ import ServicePageCarousel from "../_components/ServicePageCarousel";
 import Testmonial from "../_components/Testmonial";
 import ContactForm from "../_components/ContactForm";
 import { prisma } from "@/lib/utils";
+export const dynamic = "force-dynamic";
 
 const ContactPage = async () => {
   // Fetching services from the database can be done here if needed

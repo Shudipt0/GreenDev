@@ -5,7 +5,7 @@ import { prisma } from "@/lib/utils";
 
 const ProjectHero = async () => {
   //  fetching data from the database
-  const projects = await prisma.project.findMany();
+  const projects = await prisma.project.findMany({take: 6});
   // console.log("Projects:", projects[0]);
   return (
     <section className="py-6 lg:pb-14 lg:pt-4">

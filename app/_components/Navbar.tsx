@@ -42,7 +42,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
 
   return (
     <section className="w-full">
-      <div className=" container mx-auto px-6 lg:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-[#090909] transition-all ease-in-out duration-300">
+      <div className=" w-full mx-auto px-6 md:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-[#090909] transition-all ease-in-out duration-300">
         {/* Desktop Menu */}
         <nav className=" hidden justify-between  lg:flex ">
           {/* Logo */}

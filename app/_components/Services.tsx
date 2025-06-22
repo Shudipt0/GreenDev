@@ -2,7 +2,7 @@ import { prisma } from "@/lib/utils";
 import ServiceCard from "./ServiceCard";
 
 const Services = async () => {
-  const services = await prisma.service.findMany();
+  const services = await prisma.service.findMany({take: 6});
   // console.log(services);
   return (
     <section className="py-10">

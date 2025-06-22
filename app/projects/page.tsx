@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import Testmonial from "../_components/Testmonial";
+export const dynamic = "force-dynamic";
 
 
 const projectDescription = {
