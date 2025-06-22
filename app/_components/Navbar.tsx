@@ -41,10 +41,10 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
   const pathName = usePathname();
 
   return (
-    <section className="w-full">
-      <div className=" w-full mx-auto px-6 md:px-28 py-4 fixed top-0 z-50 shadow  bg-white dark:bg-[#090909] transition-all ease-in-out duration-300">
+    <section className="w-full ">
+      <div className="container mx-auto px-6 md:px-28 py-4 fixed top-0 z-50 shadow bg-white dark:bg-[#090909] transition-all ease-in-out duration-300">
         {/* Desktop Menu */}
-        <nav className=" hidden justify-between  lg:flex ">
+        <nav className=" hidden justify-between lg:flex ">
           {/* Logo */}
           <div>
             <Link
@@ -60,7 +60,9 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
                 key={nav.title}
                 href={nav.url}
                 className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
-                  pathName === nav.url ? "text-black dark:text-white " : "text-[#0E0E2C]/60 dark:text-white/60 "
+                  pathName === nav.url
+                    ? "text-black dark:text-white "
+                    : "text-[#0E0E2C]/60 dark:text-white/60 "
                 }`}
               >
                 {nav.title}
@@ -102,8 +104,8 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
             </Link>
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-2">
-           {/* Theme Toggle Button */}
-                <ThemeToggleButton />
+              {/* Theme Toggle Button */}
+              <ThemeToggleButton />
               {/* menu button */}
               <button onClick={() => setMobileMenu(!mobileMenu)} className="">
                 {mobileMenu ? <FaTimes /> : <CgMenuRightAlt />}
@@ -124,7 +126,9 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
               key={nav.title}
               href={nav.url}
               className={`px-4 py-2 text-[16px] font-bold transition-colors hover:text-black ${
-                pathName === nav.url ? "text-black dark:text-white " : "text-[#0E0E2C]/60 dark:text-white/60 "
+                pathName === nav.url
+                  ? "text-black dark:text-white "
+                  : "text-[#0E0E2C]/60 dark:text-white/60 "
               }`}
               onClick={() => setMobileMenu(false)}
             >

@@ -45,7 +45,7 @@ export default function RootLayout({
       <ContextImageProvider>
        
         <html lang="en" suppressHydrationWarning>
-          <body cz-shortcut-listen="true">
+          <body cz-shortcut-listen="true" className="container mx-auto">
             <ThemeProvider attribute="class" enableSystem defaultTheme="system">
               {pathName.includes("/admin") ||
               pathName === "/sign-in" ||

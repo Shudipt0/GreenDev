@@ -26,7 +26,7 @@ const Footer = ({
     title: "GreenDev",
     url: "https://www.shadcnblocks.com",
   },
-  tagline = "Life makes easy.",
+  tagline = "Make life easy.",
   menuItems = [
     {
       title: "Product",
