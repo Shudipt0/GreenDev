@@ -18,7 +18,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <p className="text-[16px] text-[#0E0E2C]/60 dark:text-white/80 ">
         {service.description.split(" ").slice(0, 14).join(" ")}
       </p>
-      <button className=" w-[130px] px-4 py-2 text-sm flex items-center gap-4 text-blue-500 dark:text-white border-2 border-blue-500 dark:border-white rounded">
+      <button className=" w-[130px] h-[40px] text-sm flex items-center justify-center gap-4 text-blue-500 dark:text-white border-2 border-blue-500 dark:border-white rounded">
         Lern More
         <span>
           <IoIosArrowForward />

@@ -115,7 +115,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
         </div>
       </div>
       {/* Mobile Dropdown Menu */}
-      {mobileMenu && (
+    
         <div
           className={`lg:hidden flex flex-col items-center py-8 gap-4 bg-white dark:bg-[#262A31] shadow-md fixed w-full z-50 top-14 overflow-hidden transition-all ease-in-out duration-300 ${
             mobileMenu ? " max-h-96" : "max-h-0"
@@ -151,7 +151,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
             </SignedIn>
           </div>
         </div>
-      )}
+      
       {/* End Mobile Dropdown Menu */}
     </section>
   );
