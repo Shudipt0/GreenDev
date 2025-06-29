@@ -117,7 +117,7 @@ const Navbar = ({ mobileMenu, setMobileMenu }: NavbarProps) => {
       {/* Mobile Dropdown Menu */}
     
         <div
-          className={`lg:hidden flex flex-col items-center justify-center gap-4 bg-white dark:bg-[#262A31] shadow-md fixed w-full z-50 overflow-hidden transition-all ease-in-out duration-300 ${
+          className={` lg:hidden top-14 flex flex-col items-center justify-center gap-4 bg-white dark:bg-[#262A31] shadow-md fixed w-full z-50 overflow-hidden transition-all ease-in-out duration-300 ${
             mobileMenu ? " h-[400px]" : "h-0"
           } `}
         >
